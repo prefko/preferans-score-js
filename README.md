@@ -1,4 +1,5 @@
 # preferans-score-js
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/53dbe60afded44a2994cc230c32f92fb)](https://app.codacy.com/app/cope/preferans-score-js?utm_source=github.com&utm_medium=referral&utm_content=cope/preferans-score-js&utm_campaign=Badge_Grade_Dashboard)
 [![build status](https://img.shields.io/travis/cope/preferans-score-js.svg?branch=master)](https://travis-ci.org/cope/preferans-score-js)
 [![codacy](https://img.shields.io/codacy/grade/07b287618ee8467da981a039baea0b10.svg)](https://www.codacy.com/project/cope/preferans-score-js/dashboard)
 [![coverage](https://img.shields.io/coveralls/github/cope/preferans-score-js/master.svg)](https://coveralls.io/github/cope/preferans-score-js?branch=master)
