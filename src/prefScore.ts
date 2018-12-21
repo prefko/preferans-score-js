@@ -67,9 +67,9 @@ export default class PrefScore {
 		return this.recalculate();
 	}
 
-	invalidateHand(id: number): PrefScore {
+	repealHand(id: number): PrefScore {
 		let index = _.findIndex(this._hands, {id});
-		if (!this._hands[index]) throw new Error("PrefPapers::invalidateHand:Hand not found with id " + id);
+		if (!this._hands[index]) throw new Error("PrefPapers::repealHand:Hand not found with id " + id);
 		this._hands[index].repealed = true;
 		return this.recalculate();
 	}

@@ -174,23 +174,23 @@ describe("PrefPapers tests", () => {
 		});
 	});
 
-	describe("PrefPapers invalidateHand tests", () => {
-		it("invalidateHand should throw properly", () => {
-			expect(() => new PrefPapers(30).invalidateHand()).to.throw();
-			expect(() => new PrefPapers(30).invalidateHand(1)).to.throw();
+	describe("PrefPapers repealHand tests", () => {
+		it("repealHand should throw properly", () => {
+			expect(() => new PrefPapers(30).repealHand()).to.throw();
+			expect(() => new PrefPapers(30).repealHand(1)).to.throw();
 			expect(() => new PrefPapers(30)
 				.addHand({newRefa: true})
-				.invalidateHand(2)
+				.repealHand(2)
 			).to.throw();
 			expect(() => new PrefPapers(30)
 				.addHand({newRefa: true})
-				.invalidateHand(1)
+				.repealHand(1)
 			).to.not.throw();
 		});
-		it("invalidateHand should return proper values", () => {
+		it("repealHand should return proper values", () => {
 			expect(new PrefPapers(30)
 				.addHand({value: 10, main: {username: "p1"}, left: {username: "p3"}, right: {username: "p2"}})
-				.invalidateHand(1)
+				.repealHand(1)
 				.getJSON()
 			).to.deep.equal({
 				p1: {username: "p1", score: -300, refe: 0, left: [], middle: [30, {repealed: true, value: 20}], right: []},
