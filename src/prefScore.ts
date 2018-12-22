@@ -88,23 +88,35 @@ export default class PrefScore {
 		let {value, main = {}, left = {}, right = {}, newRefa = false, repealed = false} = hand;
 		main.failed = true === main.failed;
 
-		if (newRefa) return this.processNewRefa();
+		if (newRefa) {
+			if (true === repealed) {
+				throw new Error("PrefScore::processHand:Invalid instructions! Cannot have a new refa repealed hand.");
+			}
+			return this.processNewRefa();
+		}
 
 		let mainPlayer = this.getPlayerByUsername(main.username);
 		let leftPlayer = this.getPlayerByUsername(left.username);
 		let rightPlayer = this.getPlayerByUsername(right.username);
 
-		mainPlayer.markMePlayedRefa(main.failed);
-		leftPlayer.markRightPlayedRefa(main.failed);
-		rightPlayer.markLeftPlayedRefa(main.failed);
+		if (true !== repealed) {
+			mainPlayer.markMePlayedRefa(main.failed);
+			leftPlayer.markRightPlayedRefa(main.failed);
+			rightPlayer.markLeftPlayedRefa(main.failed);
 
-		mainPlayer.addMiddleValue(main.failed ? value : -value, repealed);
-		leftPlayer.processFollowing(_.merge({}, left, {value, mainPosition: "right", repealed}));
-		rightPlayer.processFollowing(_.merge({}, right, {value, mainPosition: "left", repealed}));
+			mainPlayer.addMiddleValue(main.failed ? value : -value);
+			leftPlayer.processFollowing(_.merge({}, left, {value, mainPosition: "right"}));
+			rightPlayer.processFollowing(_.merge({}, right, {value, mainPosition: "left"}));
 
-		mainPlayer.calculateScore(leftPlayer.getRightValue(), rightPlayer.getLeftValue());
-		leftPlayer.calculateScore(rightPlayer.getRightValue(), mainPlayer.getLeftValue());
-		rightPlayer.calculateScore(mainPlayer.getRightValue(), leftPlayer.getLeftValue());
+			mainPlayer.calculateScore(leftPlayer.getRightValue(), rightPlayer.getLeftValue());
+			leftPlayer.calculateScore(rightPlayer.getRightValue(), mainPlayer.getLeftValue());
+			rightPlayer.calculateScore(mainPlayer.getRightValue(), leftPlayer.getLeftValue());
+
+		} else {
+			mainPlayer.addMiddleValue(main.failed ? value : -value, true);
+			leftPlayer.processFollowing(_.merge({}, left, {value, mainPosition: "right", repealed}));
+			rightPlayer.processFollowing(_.merge({}, right, {value, mainPosition: "left", repealed}));
+		}
 
 		return this;
 	}
