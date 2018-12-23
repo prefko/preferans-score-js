@@ -1561,6 +1561,14 @@ posix-character-classes@^0.1.0:
   version "0.1.1"
   resolved "https://registry.yarnpkg.com/posix-character-classes/-/posix-character-classes-0.1.1.tgz#01eac0fe3b5af71a2a6c02feabb8c1fef7e00eab"
 
+preferans-paper-js@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/preferans-paper-js/-/preferans-paper-js-2.0.0.tgz#768172a672ebb03d550958e17c5fb3b0c32fe3dc"
+  dependencies:
+    "@types/lodash" "^4.14.119"
+    lodash "^4.17.10"
+    mathjs "^5.0.4"
+
 prettier@^1.15.3:
   version "1.15.3"
   resolved "https://registry.yarnpkg.com/prettier/-/prettier-1.15.3.tgz#1feaac5bdd181237b54dbe65d874e02a1472786a"
