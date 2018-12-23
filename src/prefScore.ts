@@ -2,8 +2,8 @@
 "use strict";
 
 import * as _ from 'lodash';
+import PrefPaper from 'preferans-paper-js';
 import PrefPaperHand from './prefScoreHand';
-import PrefPaper from './prefPaper';
 
 const _validTricks = (main, left, right): boolean => {
 	let tricks = _.get(left, "tricks", 0) + _.get(right, "tricks", 0);
