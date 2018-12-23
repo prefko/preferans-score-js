@@ -4,12 +4,19 @@
 import * as _ from 'lodash';
 import PrefPaper from 'preferans-paper-js';
 import PrefPaperHand from './prefScoreHand';
+import PrefScoreHand from "./prefScoreHand";
+import PrefScoreHandGame from "./prefScoreHandGame";
+import PrefPaperFollower from "preferans-paper-js/lib/prefPaperFollower";
+import PrefPaperMain from "preferans-paper-js/lib/prefPaperMain";
 
-const _validTricks = (main, left, right): boolean => {
+// TODO
+const validTricks = (main: PrefPaperMain, left: PrefPaperFollower, right: PrefPaperFollower): boolean => {
 	let tricks = _.get(left, "tricks", 0) + _.get(right, "tricks", 0);
 	return _.get(main, "failed", false) ? tricks === 5 : tricks < 5;
 };
-const _invalidFails = (main, left, right) => {
+
+// TODO
+const invalidFails = (main: PrefPaperMain, left: PrefPaperFollower, right: PrefPaperFollower) => {
 	return _.get(main, "failed", false) && (_.get(left, "failed", false) || _.get(right, "failed", false));
 };
 
@@ -18,19 +25,22 @@ export default class PrefScore {
 	private _p1: PrefPaper;
 	private _p2: PrefPaper;
 	private _p3: PrefPaper;
-	private _bula: number;
-	private _refe = 0;
-	private _usedRefe = 0;
-	private _hands: Map<number, PrefPaperHand>;
+	private readonly _bula: number;
+	private readonly _refas: number = Infinity;
+	private _unusedRefas: number = Infinity;
+	private readonly _hands: PrefPaperHand[];
 
-	constructor(name1: string, name2: string, name3: string, bula: number, refe?: number) {
-		this._hands = new Map<number, PrefPaperHand>();
+	constructor(name1: string, name2: string, name3: string, bula: number, refas?: number) {
+		this._hands = [];
 		this._bula = bula;
-		if (refe) this._refe = refe;
+		if (_.isNumber(refas) && refas >= 0 && refas < Infinity) {
+			this._refas = refas;
+			this._unusedRefas = refas;
+		}
 
-		this._p1 = new PrefPaper(name1, bula, this._refe);
-		this._p2 = new PrefPaper(name2, bula, this._refe);
-		this._p3 = new PrefPaper(name3, bula, this._refe);
+		this._p1 = new PrefPaper(name1, bula, this._refas);
+		this._p2 = new PrefPaper(name2, bula, this._refas);
+		this._p3 = new PrefPaper(name3, bula, this._refas);
 	}
 
 	get handCount(): number {
@@ -38,15 +48,15 @@ export default class PrefScore {
 	}
 
 	// TODO...
-	getPlayerByUsername(username: string) {
+	getPaperByUsername(username: string) {
 		let id = _.findKey(this, (attr) => attr.username === username);
 		if (id) return _.get(this, id);
-		throw new Error("PrefPapers::getPlayerByUsername:Player not found for username " + username);
+		throw new Error("PrefPapers::getPaperByUsername:Paper not found for username " + username);
 	}
 
-	static isValidHand(hand: any): boolean {
-		let {main = {}, left = {}, right = {}} = hand;
-		return _validHand(hand) && _validTricks(main, left, right) && !_invalidFails(main, left, right);
+	static isValidHand(hand: PrefScoreHandGame): boolean {
+		const {main, left, right} = hand;
+		return validTricks(main, left, right) && !invalidFails(main, left, right);
 	}
 
 	addHand(hand: PrefPaperHand): PrefScore {
@@ -75,7 +85,7 @@ export default class PrefScore {
 	}
 
 	recalculate(): PrefScore {
-		this._usedRefe = 0;
+		this._unusedRefas = this._refas;
 		this._p1.reset();
 		this._p2.reset();
 		this._p3.reset();
@@ -95,36 +105,36 @@ export default class PrefScore {
 			return this.processNewRefa();
 		}
 
-		let mainPlayer = this.getPlayerByUsername(main.username);
-		let leftPlayer = this.getPlayerByUsername(left.username);
-		let rightPlayer = this.getPlayerByUsername(right.username);
+		let mainPaper = this.getPaperByUsername(main.username);
+		let leftPaper = this.getPaperByUsername(left.username);
+		let rightPaper = this.getPaperByUsername(right.username);
 
 		if (true !== repealed) {
-			mainPlayer.markMePlayedRefa(main.failed);
-			leftPlayer.markRightPlayedRefa(main.failed);
-			rightPlayer.markLeftPlayedRefa(main.failed);
+			mainPaper.markMePlayedRefa(main.failed);
+			leftPaper.markRightPlayedRefa(main.failed);
+			rightPaper.markLeftPlayedRefa(main.failed);
 
-			mainPlayer.addMiddleValue(main.failed ? value : -value);
-			leftPlayer.processFollowing(_.merge({}, left, {value, mainPosition: "right"}));
-			rightPlayer.processFollowing(_.merge({}, right, {value, mainPosition: "left"}));
+			mainPaper.addMiddleValue(main.failed ? value : -value);
+			leftPaper.processFollowing(_.merge({}, left, {value, mainPosition: "right"}));
+			rightPaper.processFollowing(_.merge({}, right, {value, mainPosition: "left"}));
 
-			mainPlayer.calculateScore(leftPlayer.getRightValue(), rightPlayer.getLeftValue());
-			leftPlayer.calculateScore(rightPlayer.getRightValue(), mainPlayer.getLeftValue());
-			rightPlayer.calculateScore(mainPlayer.getRightValue(), leftPlayer.getLeftValue());
+			mainPaper.calculateScore(leftPaper.getRightValue(), rightPaper.getLeftValue());
+			leftPaper.calculateScore(rightPaper.getRightValue(), mainPaper.getLeftValue());
+			rightPaper.calculateScore(mainPaper.getRightValue(), leftPaper.getLeftValue());
 
 		} else {
-			mainPlayer.addMiddleValue(main.failed ? value : -value, true);
-			leftPlayer.processFollowing(_.merge({}, left, {value, mainPosition: "right", repealed}));
-			rightPlayer.processFollowing(_.merge({}, right, {value, mainPosition: "left", repealed}));
+			mainPaper.addMiddleValue(main.failed ? value : -value, true);
+			leftPaper.processFollowing(_.merge({}, left, {value, mainPosition: "right", repealed}));
+			rightPaper.processFollowing(_.merge({}, right, {value, mainPosition: "left", repealed}));
 		}
 
 		return this;
 	}
 
 	processNewRefa() {
-		if (this.refe > 0 && this.usedRefe >= this.refe) throw new Error("PrefPapers::processNewRefa:All refas have been used " + this.refe);
+		if (this._refas > 0 && this._unusedRefas <= 0) throw new Error("PrefPapers::processNewRefa:All refas have been used " + this._refas);
 
-		this.usedRefe++;
+		this._unusedRefas--;
 		this.p1.newRefa(true);
 		this.p2.newRefa(true);
 		this.p3.newRefa(true);
@@ -132,11 +142,11 @@ export default class PrefScore {
 		return this;
 	}
 
-	getJSON() {
+	get json() {
 		return {
-			p1: this.p1.getJSON(),
-			p2: this.p2.getJSON(),
-			p3: this.p3.getJSON()
+			p1: this._p1.json,
+			p2: this._p2.json,
+			p3: this._p3.json
 		};
 	}
 
