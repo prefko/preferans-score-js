@@ -4,8 +4,8 @@
 import PrefScoreHand from "./prefScoreHand";
 
 export default class PrefScoreHandRefa extends PrefScoreHand {
-	constructor() {
-		super();
+	constructor(id: number) {
+		super(id);
 	}
 
 	get refa() {

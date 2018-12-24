@@ -3,37 +3,34 @@
 
 import * as _ from 'lodash';
 import PrefPaper from 'preferans-paper-js';
-import PrefPaperHand from './prefScoreHand';
-import PrefScoreHand from "./prefScoreHand";
+import PrefScoreHand from './prefScoreHand';
 import PrefScoreHandGame from "./prefScoreHandGame";
 import PrefPaperFollower from "preferans-paper-js/lib/prefPaperFollower";
 import PrefPaperMain from "preferans-paper-js/lib/prefPaperMain";
+import PrefScoreHandRefa from "./prefScoreHandRefa";
 
-// TODO
 const validTricks = (main: PrefPaperMain, left: PrefPaperFollower, right: PrefPaperFollower): boolean => {
-	let tricks = _.get(left, "tricks", 0) + _.get(right, "tricks", 0);
-	return _.get(main, "failed", false) ? tricks === 5 : tricks < 5;
+	let tricks = left.tricks + right.tricks;
+	return main.failed ? tricks === 5 : tricks < 5;
 };
 
-// TODO
-const invalidFails = (main: PrefPaperMain, left: PrefPaperFollower, right: PrefPaperFollower) => {
-	return _.get(main, "failed", false) && (_.get(left, "failed", false) || _.get(right, "failed", false));
+const validFails = (main: PrefPaperMain, left: PrefPaperFollower, right: PrefPaperFollower): boolean => {
+	return !(main.failed && (left.failed || right.failed));
 };
 
-// TODO: MOVE to PrefScore
 export default class PrefScore {
 	private _p1: PrefPaper;
 	private _p2: PrefPaper;
 	private _p3: PrefPaper;
+	private _unusedRefas: number = Infinity;
 	private readonly _bula: number;
 	private readonly _refas: number = Infinity;
-	private _unusedRefas: number = Infinity;
-	private readonly _hands: PrefPaperHand[];
+	private readonly _hands: Map<number, PrefScoreHand>;
 
-	constructor(name1: string, name2: string, name3: string, bula: number, refas?: number) {
-		this._hands = [];
+	constructor(name1: string, name2: string, name3: string, bula: number, refas: number = Infinity) {
+		this._hands = new Map<number, PrefScoreHand>();
 		this._bula = bula;
-		if (_.isNumber(refas) && refas >= 0 && refas < Infinity) {
+		if (refas >= 0 && refas < Infinity) {
 			this._refas = refas;
 			this._unusedRefas = refas;
 		}
@@ -47,41 +44,43 @@ export default class PrefScore {
 		return _.size(this._hands);
 	}
 
-	// TODO...
-	getPaperByUsername(username: string) {
-		let id = _.findKey(this, (attr) => attr.username === username);
-		if (id) return _.get(this, id);
+	getPaperByUsername(username: string): PrefPaper {
+		if (this._p1.username === username) return this._p1;
+		if (this._p2.username === username) return this._p2;
+		if (this._p3.username === username) return this._p3;
 		throw new Error("PrefPapers::getPaperByUsername:Paper not found for username " + username);
 	}
 
-	static isValidHand(hand: PrefScoreHandGame): boolean {
-		const {main, left, right} = hand;
-		return validTricks(main, left, right) && !invalidFails(main, left, right);
+	static isValidHand(hand: PrefScoreHand): boolean {
+		// TODO: refe is also a valid hand!
+		let g = hand as PrefScoreHandGame;
+		return validTricks(g.main, g.left, g.right) && validFails(g.main, g.left, g.right);
 	}
 
-	addHand(hand: PrefPaperHand): PrefScore {
+	addHand(hand: PrefScoreHand): PrefScore {
 		let id = _.size(this._hands) + 1;
 		this._hands.set(id, hand);
 		return this.processHand(hand);
 	}
 
-	changeHand(id: number, hand: PrefPaperHand): PrefScore {
-		let index = _.findIndex(this._hands, {id});
-		if (!this._hands[index]) throw new Error("PrefPapers::changeHand:Hand not found with id " + id);
+	changeHand(index: number, hand: PrefScoreHand): PrefScore {
+		if (!this._hands.has(index)) throw new Error("PrefPapers::changeHand:Hand not found with id " + id);
 		if (!PrefScore.isValidHand(hand)) throw new Error("PrefPapers::changeHand:Hand is not valid " + JSON.stringify(hand));
 
-		hand.original = _.clone(this._hands[index]);
-		this._hands[index] = hand;
-		this._hands[index].id = id;
+		let original = _.clone(this._hands.get(index));
+		this._hands.set(index, hand);
 
 		return this.recalculate();
 	}
 
-	repealHand(id: number): PrefScore {
-		let index = _.findIndex(this._hands, {id});
-		if (!this._hands[index]) throw new Error("PrefPapers::repealHand:Hand not found with id " + id);
-		this._hands[index].repealed = true;
-		return this.recalculate();
+	repealHand(index: number): PrefScore {
+		let hand = this._hands.get(index);
+		if (hand) {
+			hand.repealed = true;
+			this._hands.set(index, hand);
+			return this.recalculate();
+		}
+		throw new Error("PrefPapers::repealHand:Hand not found with id " + index);
 	}
 
 	recalculate(): PrefScore {
@@ -94,7 +93,7 @@ export default class PrefScore {
 		return this;
 	}
 
-	processHand(hand: PrefPaperHand) {
+	processHand(hand: PrefScoreHand) {
 		let {value, main = {}, left = {}, right = {}, newRefa = false, repealed = false} = hand;
 		main.failed = true === main.failed;
 

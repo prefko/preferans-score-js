@@ -11,8 +11,8 @@ export default class PrefScoreHandGame extends PrefScoreHand {
 	private _main: PrefPaperMain;
 	private _right: PrefPaperFollower;
 
-	constructor(value: number, left: PrefPaperFollower, main: PrefPaperMain, right: PrefPaperFollower) {
-		super();
+	constructor(id: number, value: number, left: PrefPaperFollower, main: PrefPaperMain, right: PrefPaperFollower) {
+		super(id);
 
 		this._value = value;
 		this._left = left;
