@@ -57,7 +57,7 @@
 		"@types/lodash": "^4.14.119",
 		"lodash": "^4.17.10",
 		"mathjs": "^5.0.4",
-		"preferans-paper-js": "^2.1.2"
+		"preferans-paper-js": "^2.3.1"
 	},
 	"devDependencies": {
 		"@types/chai": "^4.1.7",

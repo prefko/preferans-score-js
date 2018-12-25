@@ -2,23 +2,19 @@
 "use strict";
 
 export default abstract class PrefScoreHand {
-	protected _id: number;
+	protected _index: number = 0;
 	protected _repealed: boolean = false;
 
-	constructor(id: number) {
-		this._id = id;
-	}
-
-	set id(id: number) {
-		this._id = id;
+	set index(index: number) {
+		this._index = index;
 	}
 
 	set repealed(repealed: boolean) {
 		this._repealed = repealed;
 	}
 
-	get id() {
-		return this._id;
+	get index() {
+		return this._index;
 	}
 
 	get repealed() {

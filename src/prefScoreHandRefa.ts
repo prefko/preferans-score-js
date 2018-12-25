@@ -4,11 +4,16 @@
 import PrefScoreHand from "./prefScoreHand";
 
 export default class PrefScoreHandRefa extends PrefScoreHand {
-	constructor(id: number) {
-		super(id);
+	constructor() {
+		super();
 	}
 
 	get refa() {
 		return true;
 	}
+
+	set repealed(repealed: boolean) {
+		throw new Error("PrefScoreHand::set repealed:Invalid! Cannot have a refa hand repealed.");
+	}
+
 }
