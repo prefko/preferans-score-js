@@ -26,7 +26,7 @@ export default class PrefScore {
 	public addHand(hand: PrefScoreHand): PrefScore {
 		if (true === hand.refa && !this._p1.hasUnusedRefas()) return this;
 
-		let index = _.size(this._hands) + 1;
+		const index = _.size(this._hands) + 1;
 		hand.index = index;
 		this._hands.set(index, hand);
 		return this.processHand(hand);
@@ -34,7 +34,7 @@ export default class PrefScore {
 
 	public repealHand(index: number): PrefScore {
 		if (index > 0) {
-			let hand = this._hands.get(index);
+			const hand = this._hands.get(index);
 			if (hand) {
 				hand.repealed = true;
 				this._hands.set(index, hand);
@@ -42,16 +42,6 @@ export default class PrefScore {
 			}
 		}
 		throw new Error("PrefPapers::repealHand:Hand not found with index " + index);
-	}
-
-	private recalculate(): PrefScore {
-		this._p1.reset();
-		this._p2.reset();
-		this._p3.reset();
-
-		for (let hand of this._hands) this.processHand(hand[1]);
-
-		return this;
 	}
 
 	public hasUnplayedRefa(username: string): boolean {
@@ -63,7 +53,7 @@ export default class PrefScore {
 		for (let m of this._hands) {
 			if (m[1].refa) cnt++;
 			else {
-				let h = m[1] as PrefScoreHandGame;
+				const h = m[1] as PrefScoreHandGame;
 				if (!h.repealed) cnt++;
 			}
 		}
@@ -76,6 +66,16 @@ export default class PrefScore {
 			p2: this._p2.json,
 			p3: this._p3.json
 		};
+	}
+
+	private recalculate(): PrefScore {
+		this._p1.reset();
+		this._p2.reset();
+		this._p3.reset();
+
+		for (let hand of this._hands) this.processHand(hand[1]);
+
+		return this;
 	}
 
 	private processHand(hand: PrefScoreHand) {

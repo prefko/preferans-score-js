@@ -9,9 +9,9 @@ import PrefPaperFollower from "preferans-paper-js/lib/prefPaperFollower";
 describe("PrefScore tests", () => {
 
 	describe("PrefScore classes constructors tests", () => {
-		let main = new PrefPaperMain("cope", 6);
-		let left = new PrefPaperFollower("milja", true, 2);
-		let right = new PrefPaperFollower("mitko", true, 2);
+		const main = new PrefPaperMain("cope", 6);
+		const left = new PrefPaperFollower("milja", true, 2);
+		const right = new PrefPaperFollower("mitko", true, 2);
 		it("constructors should work", () => {
 			expect(() => new PrefScoreHandGame(10, main, left, right)).to.not.throw();
 			expect(new PrefScoreHandGame(10, main, left, right)).to.be.an("object");
@@ -19,10 +19,10 @@ describe("PrefScore tests", () => {
 	});
 
 	describe("PrefScoreHand methods tests", () => {
-		let main = new PrefPaperMain("cope", 6);
-		let left = new PrefPaperFollower("milja", true, 2);
-		let right = new PrefPaperFollower("mitko", true, 2);
-		let hand = new PrefScoreHandGame(10, main, left, right);
+		const main = new PrefPaperMain("cope", 6);
+		const left = new PrefPaperFollower("milja", true, 2);
+		const right = new PrefPaperFollower("mitko", true, 2);
+		const hand = new PrefScoreHandGame(10, main, left, right);
 		hand.index = 1;
 		hand.repealed = true;
 		it("PrefScoreHand methods should work properly", () => {
@@ -36,19 +36,19 @@ describe("PrefScore tests", () => {
 	});
 
 	describe("PrefScoreHandGame methods tests", () => {
-		let main = new PrefPaperMain("cope", 6);
-		let mainFailed = new PrefPaperMain("cope", 5, true);
-		let mainFailed2 = new PrefPaperMain("cope", 6, true);
-		let mainWrong = new PrefPaperMain("cope", 5, true);
-		let left = new PrefPaperFollower("milja", true, 2);
-		let leftFailed = new PrefPaperFollower("milja", true, 3, true);
-		let leftFailed2 = new PrefPaperFollower("milja", true, 2, true);
-		let leftWrong = new PrefPaperFollower("milja", true, 4);
-		let right = new PrefPaperFollower("mitko", true, 2);
-		let rightFailed = new PrefPaperFollower("mitko", true, 3, true);
-		let rightFailed2 = new PrefPaperFollower("mitko", true, 2, true);
-		let rightWrong = new PrefPaperFollower("mitko", true, 4);
-		let game = new PrefScoreHandGame(10, main, left, right);
+		const main = new PrefPaperMain("cope", 6);
+		const mainFailed = new PrefPaperMain("cope", 5, true);
+		const mainFailed2 = new PrefPaperMain("cope", 6, true);
+		const mainWrong = new PrefPaperMain("cope", 5, true);
+		const left = new PrefPaperFollower("milja", true, 2);
+		const leftFailed = new PrefPaperFollower("milja", true, 3, true);
+		const leftFailed2 = new PrefPaperFollower("milja", true, 2, true);
+		const leftWrong = new PrefPaperFollower("milja", true, 4);
+		const right = new PrefPaperFollower("mitko", true, 2);
+		const rightFailed = new PrefPaperFollower("mitko", true, 3, true);
+		const rightFailed2 = new PrefPaperFollower("mitko", true, 2, true);
+		const rightWrong = new PrefPaperFollower("mitko", true, 4);
+		const game = new PrefScoreHandGame(10, main, left, right);
 		it("PrefScoreHandGame methods should work properly", () => {
 			expect(() => new PrefScoreHandGame(10, mainWrong, left, right)).to.throw();
 			expect(() => new PrefScoreHandGame(10, mainFailed2, left, right)).to.throw();

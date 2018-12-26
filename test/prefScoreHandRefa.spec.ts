@@ -14,7 +14,7 @@ describe("PrefScoreHandRefa tests", () => {
 	});
 
 	describe("PrefScoreHand methods tests", () => {
-		let hand = new PrefScoreHandRefa();
+		const hand = new PrefScoreHandRefa();
 		hand.index = 1;
 		it("PrefScoreHand methods should work properly", () => {
 			expect(new PrefScoreHandRefa().index).to.be.equal(0);

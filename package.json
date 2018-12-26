@@ -1,6 +1,6 @@
 {
 	"name": "preferans-score-js",
-	"version": "1.0.1",
+	"version": "1.0.2",
 	"description": "nodejs score for preferans",
 	"engines": {
 		"node": ">=8.9"
@@ -57,7 +57,7 @@
 		"@types/lodash": "^4.14.119",
 		"lodash": "^4.17.10",
 		"mathjs": "^5.0.4",
-		"preferans-paper-js": "^2.5.0"
+		"preferans-paper-js": "^2.5.1"
 	},
 	"devDependencies": {
 		"@types/chai": "^4.1.7",
