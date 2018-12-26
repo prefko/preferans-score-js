@@ -2,7 +2,6 @@
 "use strict";
 
 import {expect} from 'chai';
-
 import PrefScoreHandRefa from "../src/prefScoreHandRefa";
 
 describe("PrefScoreHandRefa tests", () => {
@@ -15,16 +14,16 @@ describe("PrefScoreHandRefa tests", () => {
 	});
 
 	describe("PrefScoreHand methods tests", () => {
-		let refa = new PrefScoreHandRefa();
-		refa.index = 1;
+		let hand = new PrefScoreHandRefa();
+		hand.index = 1;
 		it("PrefScoreHand methods should work properly", () => {
 			expect(new PrefScoreHandRefa().index).to.be.equal(0);
 			expect(() => new PrefScoreHandRefa().repealed).to.throw();
-			expect(() => refa.repealed = true).to.throw();
-			expect(() => refa.repealed).to.throw();
-			expect(refa.index).to.be.equal(1);
-			expect(refa.refa).to.be.equal(true);
-			expect(refa.game).to.be.equal(false);
+			expect(() => hand.repealed = true).to.throw();
+			expect(() => hand.repealed).to.throw();
+			expect(hand.index).to.be.equal(1);
+			expect(hand.refa).to.be.equal(true);
+			expect(hand.game).to.be.equal(false);
 		});
 	});
 
