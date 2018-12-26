@@ -5,8 +5,6 @@ import * as _ from 'lodash';
 import PrefPaper from 'preferans-paper-js';
 import PrefScoreHand from './prefScoreHand';
 import PrefScoreHandGame from "./prefScoreHandGame";
-import PrefPaperFollower from "preferans-paper-js/lib/prefPaperFollower";
-import PrefPaperMain from "preferans-paper-js/lib/prefPaperMain";
 import {PrefPaperPosition} from "preferans-paper-js/lib/prefPaperEnums";
 
 export default class PrefScore {
@@ -23,17 +21,6 @@ export default class PrefScore {
 		this._p1 = new PrefPaper(name1, bula, refas);
 		this._p2 = new PrefPaper(name2, bula, refas);
 		this._p3 = new PrefPaper(name3, bula, refas);
-	}
-
-	get handCount(): number {
-		return _.size(this._hands);
-	}
-
-	private getPaperByUsername(username: string): PrefPaper {
-		if (this._p1.username === username) return this._p1;
-		if (this._p2.username === username) return this._p2;
-		if (this._p3.username === username) return this._p3;
-		throw new Error("PrefPapers::getPaperByUsername:Paper not found for username " + username);
 	}
 
 	public addHand(hand: PrefScoreHand): PrefScore {
@@ -91,14 +78,12 @@ export default class PrefScore {
 		return this;
 	}
 
-	private processNewRefa() {
-		if (this._p1.hasUnusedRefas()) {
-			this._p1.addNewRefa();
-			this._p2.addNewRefa();
-			this._p3.addNewRefa();
-		}
+	public hasUnplayedRefa(username: string): boolean {
+		return this.getPaperByUsername(username).hasUnplayedRefa();
+	}
 
-		return this;
+	get handCount(): number {
+		return _.size(this._hands);
 	}
 
 	get json() {
@@ -107,6 +92,23 @@ export default class PrefScore {
 			p2: this._p2.json,
 			p3: this._p3.json
 		};
+	}
+
+	private getPaperByUsername(username: string): PrefPaper {
+		if (this._p1.username === username) return this._p1;
+		if (this._p2.username === username) return this._p2;
+		if (this._p3.username === username) return this._p3;
+		throw new Error("PrefPapers::getPaperByUsername:Paper not found for username " + username);
+	}
+
+	private processNewRefa() {
+		if (this._p1.hasUnusedRefas()) {
+			this._p1.addNewRefa();
+			this._p2.addNewRefa();
+			this._p3.addNewRefa();
+		}
+
+		return this;
 	}
 
 }

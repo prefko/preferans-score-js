@@ -6,6 +6,7 @@ import PrefPaperFollower from "preferans-paper-js/lib/prefPaperFollower";
 import PrefPaperMain from "preferans-paper-js/lib/prefPaperMain";
 
 const validTricks = (main: PrefPaperMain, left: PrefPaperFollower, right: PrefPaperFollower): boolean => {
+	if (main.failed && main.tricks > 5) return false;
 	let tricks = left.tricks + right.tricks;
 	return main.failed ? tricks === 5 : tricks < 5;
 };
