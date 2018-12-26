@@ -9,9 +9,6 @@ preferans player paper
 
 ### Usage
 
-    const PrefPaper = require('preferans-paper-js');
+    const PrefScore = require('preferans-score-js');
+    let score = new PrefScore("cope", "milja", "mitko", 60);
     ...
-
-#### Tools
-notes
-npm-dview
