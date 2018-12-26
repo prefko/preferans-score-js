@@ -7,7 +7,7 @@
 
 preferans player paper
 
-### Usage
+## Usage
 
     const PrefScore = require('preferans-score-js');
     let score = new PrefScore("cope", "milja", "mitko", 60);

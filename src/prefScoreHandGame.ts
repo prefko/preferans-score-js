@@ -7,7 +7,7 @@ import PrefPaperMain from "preferans-paper-js/lib/prefPaperMain";
 
 const validTricks = (main: PrefPaperMain, left: PrefPaperFollower, right: PrefPaperFollower): boolean => {
 	if (main.failed && main.tricks > 5) return false;
-	let tricks = left.tricks + right.tricks;
+	const tricks = left.tricks + right.tricks;
 	return main.failed ? tricks === 5 : tricks < 5;
 };
 
@@ -22,11 +22,15 @@ export default class PrefScoreHandGame extends PrefScoreHand {
 	private readonly _right: PrefPaperFollower;
 
 	constructor(value: number, main: PrefPaperMain, left: PrefPaperFollower, right: PrefPaperFollower) {
-		if (!validTricks(main, left, right)) throw new Error("PrefScoreHandGame::constructor:Invalid tricks! " +
-			"[main:" + main.tricks + ", left:" + left.tricks + ", right:" + right.tricks + "]");
+		if (!validTricks(main, left, right)) {
+			throw new Error("PrefScoreHandGame::constructor:Invalid tricks! " +
+				"[main:" + main.tricks + ", left:" + left.tricks + ", right:" + right.tricks + "]");
+		}
 
-		if (!validFails(main, left, right)) throw new Error("PrefScoreHandGame::constructor:Invalid fails! " +
-			"[main.failed:" + main.failed + ", left.failed:" + left.failed + ", right.failed:" + right.failed + "]");
+		if (!validFails(main, left, right)) {
+			throw new Error("PrefScoreHandGame::constructor:Invalid fails! " +
+				"[main.failed:" + main.failed + ", left.failed:" + left.failed + ", right.failed:" + right.failed + "]");
+		}
 
 		super();
 		this._value = value;

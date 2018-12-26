@@ -50,7 +50,7 @@ export default class PrefScore {
 
 	get handCount(): number {
 		let cnt = 0;
-		for (let m of this._hands) {
+		for (const m of this._hands) {
 			if (m[1].refa) cnt++;
 			else {
 				const h = m[1] as PrefScoreHandGame;
@@ -73,7 +73,7 @@ export default class PrefScore {
 		this._p2.reset();
 		this._p3.reset();
 
-		for (let hand of this._hands) this.processHand(hand[1]);
+		for (const hand of this._hands) this.processHand(hand[1]);
 
 		return this;
 	}
@@ -81,13 +81,13 @@ export default class PrefScore {
 	private processHand(hand: PrefScoreHand) {
 		if (true === hand.refa) return this.processNewRefa();
 
-		let playedHand = hand as PrefScoreHandGame;
-		let mainPaper = this.getPaperByUsername(playedHand.main.username);
-		let leftPaper = this.getPaperByUsername(playedHand.left.username);
-		let rightPaper = this.getPaperByUsername(playedHand.right.username);
+		const playedHand = hand as PrefScoreHandGame;
+		const mainPaper = this.getPaperByUsername(playedHand.main.username);
+		const leftPaper = this.getPaperByUsername(playedHand.left.username);
+		const rightPaper = this.getPaperByUsername(playedHand.right.username);
 
-		let value = playedHand.value;
-		let mainPassed = !playedHand.main.failed;
+		const value = playedHand.value;
+		const mainPassed = !playedHand.main.failed;
 
 		mainPaper.processMain(playedHand.main, value, playedHand.repealed);
 		leftPaper.processFollowing(playedHand.left, value, mainPassed, PrefPaperPosition.RIGHT, playedHand.repealed);
