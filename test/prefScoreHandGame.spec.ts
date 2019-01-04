@@ -26,12 +26,12 @@ describe("PrefScore tests", () => {
 		hand.index = 1;
 		hand.repealed = true;
 		it("PrefScoreHand methods should work properly", () => {
-			expect(new PrefScoreHandGame(10, main, left, right).index).to.be.equal(0);
-			expect(new PrefScoreHandGame(10, main, left, right).repealed).to.be.equal(false);
-			expect(hand.index).to.be.equal(1);
-			expect(hand.repealed).to.be.equal(true);
-			expect(hand.refa).to.be.equal(false);
-			expect(hand.game).to.be.equal(true);
+			expect(new PrefScoreHandGame(10, main, left, right).index).to.equal(0);
+			expect(new PrefScoreHandGame(10, main, left, right).repealed).to.equal(false);
+			expect(hand.index).to.equal(1);
+			expect(hand.repealed).to.equal(true);
+			expect(hand.refa).to.equal(false);
+			expect(hand.game).to.equal(true);
 		});
 	});
 
@@ -58,7 +58,7 @@ describe("PrefScore tests", () => {
 			expect(() => new PrefScoreHandGame(10, mainFailed, leftFailed, right)).to.throw();
 			expect(() => new PrefScoreHandGame(10, mainFailed, left, rightFailed)).to.throw();
 			expect(() => new PrefScoreHandGame(10, main, leftFailed2, rightFailed2)).to.not.throw();
-			expect(game.value).to.be.equal(10);
+			expect(game.value).to.equal(10);
 			expect(game.main).to.deep.equal(main);
 			expect(game.left).to.deep.equal(left);
 			expect(game.right).to.deep.equal(right);

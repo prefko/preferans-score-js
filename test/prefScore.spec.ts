@@ -28,7 +28,7 @@ describe("PrefScore tests", () => {
 		const score = new PrefScore("cope", "milja", "mitko", 60, 0);
 		score.addHand(new PrefScoreHandRefa());
 		it("PrefScore methods should work properly", () => {
-			expect(score.handCount).to.be.equal(0);
+			expect(score.handCount).to.equal(0);
 			expect(score.json).to.deep.equal(json);
 			expect(() => score.hasUnplayedRefa("milan")).to.throw();
 			expect(score.hasUnplayedRefa("cope")).to.equal(false);
@@ -44,7 +44,7 @@ describe("PrefScore tests", () => {
 		const score2 = new PrefScore("cope", "milja", "mitko", 60);
 		score2.addHand(new PrefScoreHandRefa());
 		it("PrefScore methods should work properly", () => {
-			expect(score2.handCount).to.be.equal(1);
+			expect(score2.handCount).to.equal(1);
 			expect(score2.json).to.deep.equal(json2);
 			expect(() => score2.hasUnplayedRefa("milan")).to.throw();
 			expect(score2.hasUnplayedRefa("cope")).to.equal(true);
@@ -97,7 +97,7 @@ describe("PrefScore tests", () => {
 		it("PrefScore methods should work properly", () => {
 			expect(() => score3.repealHand(0)).to.throw();
 			expect(() => score3.repealHand(17)).to.throw();
-			expect(score3.handCount).to.be.equal(2);
+			expect(score3.handCount).to.equal(2);
 			expect(score3.json).to.deep.equal(json3);
 		});
 	});
