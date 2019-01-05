@@ -1,6 +1,6 @@
 {
 	"name": "preferans-score-js",
-	"version": "1.1.2",
+	"version": "1.2.1",
 	"description": "nodejs score for preferans",
 	"engines": {
 		"node": ">=8.9"
@@ -19,9 +19,6 @@
 		"latest-interactive": "yarn upgrade-interactive --latest",
 		"latest": "yarn upgrade --latest"
 	},
-	"files": [
-		"lib/**/*"
-	],
 	"nyc": {
 		"include": [
 			"src/**/*.ts"
@@ -60,7 +57,7 @@
 	"dependencies": {
 		"@types/lodash": "^4.14.119",
 		"lodash": "^4.17.11",
-		"preferans-paper-js": "^2.6.3"
+		"preferans-paper-js": "^2.7.1"
 	},
 	"devDependencies": {
 		"@types/chai": "^4.1.7",

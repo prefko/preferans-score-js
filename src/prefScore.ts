@@ -2,7 +2,7 @@
 "use strict";
 
 import * as _ from 'lodash';
-import PrefPaper from 'preferans-paper-js';
+import PrefPaper from "preferans-paper-js";
 import PrefScoreHand from './prefScoreHand';
 import PrefScoreHandGame from "./prefScoreHandGame";
 import {PrefPaperPosition} from "preferans-paper-js/lib/prefPaperEnums";
