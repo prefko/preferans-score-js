@@ -1,6 +1,6 @@
 {
 	"name": "preferans-score-js",
-	"version": "1.2.1",
+	"version": "1.2.2",
 	"description": "nodejs score for preferans",
 	"engines": {
 		"node": ">=8.9"
@@ -19,6 +19,9 @@
 		"latest-interactive": "yarn upgrade-interactive --latest",
 		"latest": "yarn upgrade --latest"
 	},
+	"files": [
+		"lib/**/*"
+	],
 	"nyc": {
 		"include": [
 			"src/**/*.ts"
