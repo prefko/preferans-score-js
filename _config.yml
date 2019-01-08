@@ -4,5 +4,5 @@ title: preferans-score-js
 description: preferans score
 show_downloads: "true"
 include:
-    - "_*_.html"
-    - "_*_.*.html"
+  - "_*_.html"
+  - "_*_.*.html"
