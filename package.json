@@ -1,6 +1,6 @@
 {
 	"name": "preferans-score-js",
-	"version": "1.2.2",
+	"version": "1.2.3",
 	"description": "nodejs score for preferans",
 	"engines": {
 		"node": ">=8.9"
@@ -8,6 +8,7 @@
 	"main": "./lib/prefScore.js",
 	"types": "./lib/prefScore.d.ts",
 	"scripts": {
+		"all": "yarn & yarn build & yarn test & yarn docs",
 		"build": "tsc",
 		"build:watch": "tsc --watch",
 		"lint": "tslint -p tsconfig.json",
@@ -60,7 +61,7 @@
 	"dependencies": {
 		"@types/lodash": "^4.14.119",
 		"lodash": "^4.17.11",
-		"preferans-paper-js": "^2.7.1"
+		"preferans-paper-js": "^2.7.3"
 	},
 	"devDependencies": {
 		"@types/chai": "^4.1.7",
