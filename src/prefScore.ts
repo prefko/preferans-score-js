@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 "use strict";
 
-import * as _ from 'lodash';
+import {size} from 'lodash';
 import PrefPaper from "preferans-paper-js";
 import PrefScoreHand from './prefScoreHand';
 import PrefScoreHandGame from "./prefScoreHandGame";
@@ -26,7 +26,7 @@ export default class PrefScore {
 	public addHand(hand: PrefScoreHand): PrefScore {
 		if (true === hand.refa && !this._p1.hasUnusedRefas()) return this;
 
-		const index = _.size(this._hands) + 1;
+		const index = size(this._hands) + 1;
 		hand.index = index;
 		this._hands.set(index, hand);
 		return this.processHand(hand);
