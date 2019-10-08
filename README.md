@@ -7,7 +7,7 @@
 [![codacy](https://img.shields.io/codacy/grade/53dbe60afded44a2994cc230c32f92fb.svg)](https://www.codacy.com/project/prefko/preferans-score-js/dashboard)
 [![coverage](https://img.shields.io/coveralls/github/prefko/preferans-score-js/master.svg)](https://coveralls.io/github/prefko/preferans-score-js?branch=master)
 [![dependencies](https://david-dm.org/prefko/preferans-score-js.svg)](https://www.npmjs.com/package/preferans-score-js)
-[![npm](https://img.shields.io/npm/dt/preferans-score-js.svg)](https://www.npmjs.com/package/preferans-score-js)
+[![npm](https://img.shields.io/npm/dt/preferans-score-js.svg)](https://www.npmjs.com/package/preferans-score-js) [![Greenkeeper badge](https://badges.greenkeeper.io/prefko/preferans-score-js.svg)](https://greenkeeper.io/)
 
 preferans player score
 
