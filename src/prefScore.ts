@@ -1,11 +1,11 @@
 #!/usr/bin/env node
-"use strict";
+'use strict';
 
-import {size} from 'lodash';
-import PrefPaper from "preferans-paper-js";
+import { size } from 'lodash';
+import PrefPaper from 'preferans-paper-js';
 import PrefScoreHand from './prefScoreHand';
-import PrefScoreHandGame from "./prefScoreHandGame";
-import {PrefPaperPosition} from "preferans-paper-js/lib/prefPaperEnums";
+import PrefScoreHandGame from './prefScoreHandGame';
+import { PrefPaperPosition } from 'preferans-paper-js/lib/prefPaperEnums';
 
 export default class PrefScore {
 	private readonly _p1: PrefPaper;
@@ -41,7 +41,7 @@ export default class PrefScore {
 				return this.recalculate();
 			}
 		}
-		throw new Error("PrefPapers::repealHand:Hand not found with index " + index);
+		throw new Error('PrefPapers::repealHand:Hand not found with index ' + index);
 	}
 
 	public hasUnplayedRefa(username: string): boolean {
@@ -64,7 +64,7 @@ export default class PrefScore {
 		return {
 			p1: this._p1.json,
 			p2: this._p2.json,
-			p3: this._p3.json
+			p3: this._p3.json,
 		};
 	}
 
@@ -104,7 +104,7 @@ export default class PrefScore {
 		if (this._p1.username === username) return this._p1;
 		if (this._p2.username === username) return this._p2;
 		if (this._p3.username === username) return this._p3;
-		throw new Error("PrefPapers::getPaperByUsername:Paper not found for username " + username);
+		throw new Error('PrefPapers::getPaperByUsername:Paper not found for username ' + username);
 	}
 
 	private processNewRefa() {

@@ -1,9 +1,9 @@
 #!/usr/bin/env node
-"use strict";
+'use strict';
 
-import PrefScoreHand from "./prefScoreHand";
-import PrefPaperFollower from "preferans-paper-js/lib/prefPaperFollower";
-import PrefPaperMain from "preferans-paper-js/lib/prefPaperMain";
+import PrefScoreHand from './prefScoreHand';
+import PrefPaperFollower from 'preferans-paper-js/lib/prefPaperFollower';
+import PrefPaperMain from 'preferans-paper-js/lib/prefPaperMain';
 
 const validTricks = (main: PrefPaperMain, left: PrefPaperFollower, right: PrefPaperFollower): boolean => {
 	if (main.failed && main.tricks > 5) return false;
@@ -23,13 +23,13 @@ export default class PrefScoreHandGame extends PrefScoreHand {
 
 	constructor(value: number, main: PrefPaperMain, left: PrefPaperFollower, right: PrefPaperFollower) {
 		if (!validTricks(main, left, right)) {
-			throw new Error("PrefScoreHandGame::constructor:Invalid tricks! " +
-				"[main:" + main.tricks + ", left:" + left.tricks + ", right:" + right.tricks + "]");
+			throw new Error('PrefScoreHandGame::constructor:Invalid tricks! ' +
+				'[main:' + main.tricks + ', left:' + left.tricks + ', right:' + right.tricks + ']');
 		}
 
 		if (!validFails(main, left, right)) {
-			throw new Error("PrefScoreHandGame::constructor:Invalid fails! " +
-				"[main.failed:" + main.failed + ", left.failed:" + left.failed + ", right.failed:" + right.failed + "]");
+			throw new Error('PrefScoreHandGame::constructor:Invalid fails! ' +
+				'[main.failed:' + main.failed + ', left.failed:' + left.failed + ', right.failed:' + right.failed + ']');
 		}
 
 		super();

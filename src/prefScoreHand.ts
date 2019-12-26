@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-"use strict";
+'use strict';
 
 export default abstract class PrefScoreHand {
 	protected _index: number = 0;

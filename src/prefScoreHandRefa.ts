@@ -1,7 +1,7 @@
 #!/usr/bin/env node
-"use strict";
+'use strict';
 
-import PrefScoreHand from "./prefScoreHand";
+import PrefScoreHand from './prefScoreHand';
 
 export default class PrefScoreHandRefa extends PrefScoreHand {
 	constructor() {
@@ -13,11 +13,11 @@ export default class PrefScoreHandRefa extends PrefScoreHand {
 	}
 
 	set repealed(repealed: boolean) {
-		throw new Error("PrefScoreHand::set repealed:Invalid! Cannot have a refa hand repealed.");
+		throw new Error('PrefScoreHand::set repealed:Invalid! Cannot have a refa hand repealed.');
 	}
 
 	get repealed() {
-		throw new Error("PrefScoreHand::set repealed:Invalid! Cannot have a refa hand repealed.");
+		throw new Error('PrefScoreHand::set repealed:Invalid! Cannot have a refa hand repealed.');
 	}
 
 }
