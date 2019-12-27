@@ -89,9 +89,9 @@ export default class PrefScore {
 		const value = playedHand.value;
 		const mainPassed = !playedHand.main.failed;
 
-		mainPaper.processMain(playedHand.main, value, playedHand.repealed);
-		leftPaper.processFollowing(playedHand.left, value, mainPassed, PrefPaperPosition.RIGHT, playedHand.repealed);
-		rightPaper.processFollowing(playedHand.right, value, mainPassed, PrefPaperPosition.LEFT, playedHand.repealed);
+		mainPaper.processAsMain(playedHand.main, value, playedHand.repealed);
+		leftPaper.processFollower(playedHand.left, value, mainPassed, PrefPaperPosition.RIGHT, playedHand.repealed);
+		rightPaper.processFollower(playedHand.right, value, mainPassed, PrefPaperPosition.LEFT, playedHand.repealed);
 
 		mainPaper.calculateScore(leftPaper.right, rightPaper.left);
 		leftPaper.calculateScore(rightPaper.right, mainPaper.left);
