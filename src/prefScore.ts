@@ -23,6 +23,21 @@ export default class PrefScore {
 		this._p3 = new PrefPaper(name3, bula, refas);
 	}
 
+	public setName1(name1: string) {
+		this._p1.username = name1;
+		return this;
+	}
+
+	public setName2(name2: string) {
+		this._p2.username = name2;
+		return this;
+	}
+
+	public setName3(name3: string) {
+		this._p3.username = name3;
+		return this;
+	}
+
 	public addHand(hand: PrefScoreHand): PrefScore {
 		if (!!hand.refa && !this._p1.hasUnusedRefas()) return this;
 
@@ -42,6 +57,10 @@ export default class PrefScore {
 			}
 		}
 		throw new Error('PrefPapers::repealHand:Hand not found with index ' + index);
+	}
+
+	public hasUnusedRefas(): boolean {
+		return this._p1.hasUnusedRefas();
 	}
 
 	public hasUnplayedRefa(username: string): boolean {

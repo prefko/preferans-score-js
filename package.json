@@ -1,6 +1,6 @@
 {
 	"name": "preferans-score-js",
-	"version": "1.2.8",
+	"version": "1.2.9",
 	"description": "nodejs score for preferans",
 	"engines": {
 		"node": ">=8.9"
