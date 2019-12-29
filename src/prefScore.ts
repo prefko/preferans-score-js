@@ -39,7 +39,7 @@ export default class PrefScore {
 	}
 
 	public addHand(hand: PrefScoreHand): PrefScore {
-		if (!!hand.refa && !this._p1.hasUnusedRefas()) return this;
+		if (hand.refa && !this._p1.hasUnusedRefas()) return this;
 
 		const index = size(this._hands) + 1;
 		hand.index = index;
@@ -98,7 +98,7 @@ export default class PrefScore {
 	}
 
 	private processHand(hand: PrefScoreHand) {
-		if (!!hand.refa) return this.processNewRefa();
+		if (hand.refa) return this.processNewRefa();
 
 		const playedHand = hand as PrefScoreHandGame;
 		const mainPaper = this.getPaperByUsername(playedHand.main.username);
