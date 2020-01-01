@@ -1,22 +1,22 @@
 #!/usr/bin/env node
-"use strict";
+'use strict';
 
-import {expect} from 'chai';
-import PrefScoreHandRefa from "../src/prefScoreHandRefa";
+import { expect } from 'chai';
+import PrefScoreHandRefa from '../src/prefScoreHandRefa';
 
-describe("PrefScoreHandRefa tests", () => {
+describe('PrefScoreHandRefa tests', () => {
 
-	describe("PrefScoreHandRefa classes constructors tests", () => {
-		it("constructors should work", () => {
+	describe('PrefScoreHandRefa classes constructors tests', () => {
+		it('constructors should work', () => {
 			expect(() => new PrefScoreHandRefa()).to.not.throw();
-			expect(new PrefScoreHandRefa()).to.be.an("object");
+			expect(new PrefScoreHandRefa()).to.be.an('object');
 		});
 	});
 
-	describe("PrefScoreHand methods tests", () => {
+	describe('PrefScoreHand methods tests', () => {
 		const hand = new PrefScoreHandRefa();
 		hand.index = 1;
-		it("PrefScoreHand methods should work properly", () => {
+		it('PrefScoreHand methods should work properly', () => {
 			expect(new PrefScoreHandRefa().index).to.equal(0);
 			expect(() => new PrefScoreHandRefa().repealed).to.throw();
 			expect(() => hand.repealed = true).to.throw();

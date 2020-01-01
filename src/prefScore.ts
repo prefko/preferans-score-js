@@ -2,40 +2,33 @@
 'use strict';
 
 import { size } from 'lodash';
-import PrefPaper from 'preferans-paper-js';
+import PrefPaper, { PrefPaperPosition } from 'preferans-paper-js';
 import PrefScoreHand from './prefScoreHand';
 import PrefScoreHandGame from './prefScoreHandGame';
-import { PrefPaperPosition } from 'preferans-paper-js/lib/prefPaperEnums';
 
 export default class PrefScore {
 	private readonly _p1: PrefPaper;
 	private readonly _p2: PrefPaper;
 	private readonly _p3: PrefPaper;
+
+	private _p1username: string;
+	private _p2username: string;
+	private _p3username: string;
+
 	private readonly _bula: number;
 	private readonly _hands: Map<number, PrefScoreHand>;
 
-	constructor(name1: string, name2: string, name3: string, bula: number, refas: number = Infinity) {
+	constructor(p1username: string, p2username: string, p3username: string, bula: number, refas: number = Infinity) {
 		this._hands = new Map<number, PrefScoreHand>();
 		this._bula = bula;
 
-		this._p1 = new PrefPaper(name1, bula, refas);
-		this._p2 = new PrefPaper(name2, bula, refas);
-		this._p3 = new PrefPaper(name3, bula, refas);
-	}
+		this._p1username = p1username;
+		this._p2username = p2username;
+		this._p3username = p3username;
 
-	public setName1(name1: string) {
-		this._p1.username = name1;
-		return this;
-	}
-
-	public setName2(name2: string) {
-		this._p2.username = name2;
-		return this;
-	}
-
-	public setName3(name3: string) {
-		this._p3.username = name3;
-		return this;
+		this._p1 = new PrefPaper('p1', bula, refas);
+		this._p2 = new PrefPaper('p2', bula, refas);
+		this._p3 = new PrefPaper('p3', bula, refas);
 	}
 
 	public addHand(hand: PrefScoreHand): PrefScore {
@@ -63,8 +56,32 @@ export default class PrefScore {
 		return this._p1.hasUnusedRefas();
 	}
 
-	public hasUnplayedRefa(username: string): boolean {
-		return this.getPaperByUsername(username).hasUnplayedRefa();
+	public hasUnplayedRefa(designation: 'p1' | 'p2' | 'p3'): boolean {
+		return this.getPaperByDesignation(designation).hasUnplayedRefa();
+	}
+
+	get username1(): string {
+		return this._p1username;
+	}
+
+	set username1(name1: string) {
+		this._p1username = name1;
+	}
+
+	get username2(): string {
+		return this._p2username;
+	}
+
+	set username2(name2: string) {
+		this._p2username = name2;
+	}
+
+	get username3(): string {
+		return this._p3username;
+	}
+
+	set username3(name3: string) {
+		this._p3username = name3;
 	}
 
 	get handCount(): number {
@@ -101,9 +118,9 @@ export default class PrefScore {
 		if (hand.refa) return this.processNewRefa();
 
 		const playedHand = hand as PrefScoreHandGame;
-		const mainPaper = this.getPaperByUsername(playedHand.main.username);
-		const leftPaper = this.getPaperByUsername(playedHand.left.username);
-		const rightPaper = this.getPaperByUsername(playedHand.right.username);
+		const mainPaper = this.getPaperByDesignation(playedHand.main.designation);
+		const leftPaper = this.getPaperByDesignation(playedHand.left.designation);
+		const rightPaper = this.getPaperByDesignation(playedHand.right.designation);
 
 		const value = playedHand.value;
 		const mainPassed = !playedHand.main.failed;
@@ -119,11 +136,10 @@ export default class PrefScore {
 		return this;
 	}
 
-	private getPaperByUsername(username: string): PrefPaper {
-		if (this._p1.username === username) return this._p1;
-		if (this._p2.username === username) return this._p2;
-		if (this._p3.username === username) return this._p3;
-		throw new Error('PrefPapers::getPaperByUsername:Paper not found for username ' + username);
+	private getPaperByDesignation(designation: 'p1' | 'p2' | 'p3'): PrefPaper {
+		if (this._p1.designation === designation) return this._p1;
+		if (this._p2.designation === designation) return this._p2;
+		return this._p3;
 	}
 
 	private processNewRefa() {
