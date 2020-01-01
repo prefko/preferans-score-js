@@ -80,7 +80,7 @@ export default class PrefScore {
 	}
 
 	public hasUnplayedRefa(designation: PrefDesignation): boolean {
-		return this._getPaperByDesignation(designation).hasUnplayedRefa();
+		return this.getPaper(designation).hasUnplayedRefa();
 	}
 
 	get username1(): string {
@@ -135,6 +135,12 @@ export default class PrefScore {
 		};
 	}
 
+	public getPaper(designation: PrefDesignation): PrefPaper {
+		if (this._p1.designation === designation) return this._p1;
+		if (this._p2.designation === designation) return this._p2;
+		return this._p3;
+	}
+
 	private _recalculate(): PrefScore {
 		this._p1.reset();
 		this._p2.reset();
@@ -164,9 +170,9 @@ export default class PrefScore {
 		const right = playHand.right;
 		const value = playHand.value;
 
-		const mainPaper = this._getPaperByDesignation(main.designation);
-		const leftPaper = this._getPaperByDesignation(left.designation);
-		const rightPaper = this._getPaperByDesignation(right.designation);
+		const mainPaper = this.getPaper(main.designation);
+		const leftPaper = this.getPaper(left.designation);
+		const rightPaper = this.getPaper(right.designation);
 
 		if (playHand.repealed) {
 			mainPaper.processAsMainRepealed(value, main.designation, main.failed);
@@ -204,12 +210,6 @@ export default class PrefScore {
 		if (this._p1.designation === designation) this._p1score = score;
 		else if (this._p2.designation === designation) this._p2score = score;
 		else this._p3score = score;
-	}
-
-	private _getPaperByDesignation(designation: PrefDesignation): PrefPaper {
-		if (this._p1.designation === designation) return this._p1;
-		if (this._p2.designation === designation) return this._p2;
-		return this._p3;
 	}
 
 	private _processNewRefa() {
