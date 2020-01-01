@@ -5,6 +5,9 @@ import { size } from 'lodash';
 import PrefPaper, { PrefPaperPosition } from 'preferans-paper-js';
 import PrefScoreHand from './prefScoreHand';
 import PrefScoreHandGame from './prefScoreHandGame';
+import PrefScoreHandRefa from './prefScoreHandRefa';
+
+export { PrefScoreHand, PrefScoreHandGame, PrefScoreHandRefa };
 
 export default class PrefScore {
 	private readonly _p1: PrefPaper;
