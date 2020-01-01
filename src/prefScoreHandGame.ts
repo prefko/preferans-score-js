@@ -2,23 +2,27 @@
 'use strict';
 
 import PrefScoreHand from './prefScoreHand';
-import { PrefPaperPlayer, PrefPaperFollower } from 'preferans-paper-js';
 
-const _validTricks = (main: PrefPaperPlayer, left: PrefPaperFollower, right: PrefPaperFollower): boolean => {
+const _validTricks = (main: PrefScoreMain, left: PrefScoreFollower, right: PrefScoreFollower): boolean => {
 	if (main.failed && main.tricks > 5) return false;
 	const tricks = left.tricks + right.tricks;
 	return main.failed ? tricks === 5 : tricks < 5;
 };
 
-const _validFails = (main: PrefPaperPlayer, left: PrefPaperFollower, right: PrefPaperFollower): boolean => !(main.failed && (left.failed || right.failed));
+const _validFails = (main: PrefScoreMain, left: PrefScoreFollower, right: PrefScoreFollower): boolean => !(main.failed && (left.failed || right.failed));
+
+type PrefDesignation = 'p1' | 'p2' | 'p3';
+
+export type PrefScoreMain = { designation: PrefDesignation, tricks: number, failed: boolean };
+export type PrefScoreFollower = { designation: PrefDesignation, followed: boolean, tricks: number, failed: boolean };
 
 export default class PrefScoreHandGame extends PrefScoreHand {
 	private readonly _value: number;
-	private readonly _left: PrefPaperFollower;
-	private readonly _main: PrefPaperPlayer;
-	private readonly _right: PrefPaperFollower;
+	private readonly _left: PrefScoreFollower;
+	private readonly _main: PrefScoreMain;
+	private readonly _right: PrefScoreFollower;
 
-	constructor(value: number, main: PrefPaperPlayer, left: PrefPaperFollower, right: PrefPaperFollower) {
+	constructor(value: number, main: PrefScoreMain, left: PrefScoreFollower, right: PrefScoreFollower) {
 		if (!_validTricks(main, left, right)) {
 			throw new Error('PrefScoreHandGame::constructor:Invalid tricks! ' +
 				'[main:' + main.tricks + ', left:' + left.tricks + ', right:' + right.tricks + ']');
@@ -40,15 +44,15 @@ export default class PrefScoreHandGame extends PrefScoreHand {
 		return this._value;
 	}
 
-	get left(): PrefPaperFollower {
+	get left(): PrefScoreFollower {
 		return this._left;
 	}
 
-	get main(): PrefPaperPlayer {
+	get main(): PrefScoreMain {
 		return this._main;
 	}
 
-	get right(): PrefPaperFollower {
+	get right(): PrefScoreFollower {
 		return this._right;
 	}
 

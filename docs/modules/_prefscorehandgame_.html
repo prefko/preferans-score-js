@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>&quot;prefScoreHandGame&quot; | preferans-score-js - v1.3.1</title>
+	<title>&quot;prefScoreHandGame&quot; | preferans-score-js - v1.4.0</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -22,7 +22,7 @@
 						<li class="state loading">Preparing search index...</li>
 						<li class="state failure">The search index is not available</li>
 					</ul>
-					<a href="../index.html" class="title">preferans-score-js - v1.3.1</a>
+					<a href="../index.html" class="title">preferans-score-js - v1.4.0</a>
 				</div>
 				<div class="table-cell" id="tsd-widgets">
 					<div id="tsd-filter">
@@ -76,6 +76,14 @@
 								<li class="tsd-kind-class tsd-parent-kind-external-module"><a href="../classes/_prefscorehandgame_.prefscorehandgame.html" class="tsd-kind-icon">Pref<wbr>Score<wbr>Hand<wbr>Game</a></li>
 							</ul>
 						</section>
+						<section class="tsd-index-section ">
+							<h3>Type aliases</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-type-alias tsd-parent-kind-external-module tsd-is-not-exported"><a href="_prefscorehandgame_.html#prefdesignation" class="tsd-kind-icon">Pref<wbr>Designation</a></li>
+								<li class="tsd-kind-type-alias tsd-parent-kind-external-module"><a href="_prefscorehandgame_.html#prefscorefollower" class="tsd-kind-icon">Pref<wbr>Score<wbr>Follower</a></li>
+								<li class="tsd-kind-type-alias tsd-parent-kind-external-module"><a href="_prefscorehandgame_.html#prefscoremain" class="tsd-kind-icon">Pref<wbr>Score<wbr>Main</a></li>
+							</ul>
+						</section>
 						<section class="tsd-index-section tsd-is-not-exported">
 							<h3>Functions</h3>
 							<ul class="tsd-index-list">
@@ -86,31 +94,95 @@
 					</div>
 				</section>
 			</section>
+			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Type aliases</h2>
+				<section class="tsd-panel tsd-member tsd-kind-type-alias tsd-parent-kind-external-module tsd-is-not-exported">
+					<a name="prefdesignation" class="tsd-anchor"></a>
+					<h3>Pref<wbr>Designation</h3>
+					<div class="tsd-signature tsd-kind-icon">Pref<wbr>Designation<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">"p1"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"p2"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"p3"</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/prefko/preferans-score-js/blob/3114bf9/src/prefScoreHandGame.ts#L14">src/prefScoreHandGame.ts:14</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-type-alias tsd-parent-kind-external-module">
+					<a name="prefscorefollower" class="tsd-anchor"></a>
+					<h3>Pref<wbr>Score<wbr>Follower</h3>
+					<div class="tsd-signature tsd-kind-icon">Pref<wbr>Score<wbr>Follower<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/prefko/preferans-score-js/blob/3114bf9/src/prefScoreHandGame.ts#L17">src/prefScoreHandGame.ts:17</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-type-declaration">
+						<h4>Type declaration</h4>
+						<ul class="tsd-parameters">
+							<li class="tsd-parameter">
+								<h5>designation<span class="tsd-signature-symbol">: </span><a href="_prefscorehandgame_.html#prefdesignation" class="tsd-signature-type">PrefDesignation</a></h5>
+							</li>
+							<li class="tsd-parameter">
+								<h5>failed<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></h5>
+							</li>
+							<li class="tsd-parameter">
+								<h5>followed<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></h5>
+							</li>
+							<li class="tsd-parameter">
+								<h5>tricks<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></h5>
+							</li>
+						</ul>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-type-alias tsd-parent-kind-external-module">
+					<a name="prefscoremain" class="tsd-anchor"></a>
+					<h3>Pref<wbr>Score<wbr>Main</h3>
+					<div class="tsd-signature tsd-kind-icon">Pref<wbr>Score<wbr>Main<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/prefko/preferans-score-js/blob/3114bf9/src/prefScoreHandGame.ts#L16">src/prefScoreHandGame.ts:16</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-type-declaration">
+						<h4>Type declaration</h4>
+						<ul class="tsd-parameters">
+							<li class="tsd-parameter">
+								<h5>designation<span class="tsd-signature-symbol">: </span><a href="_prefscorehandgame_.html#prefdesignation" class="tsd-signature-type">PrefDesignation</a></h5>
+							</li>
+							<li class="tsd-parameter">
+								<h5>failed<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></h5>
+							</li>
+							<li class="tsd-parameter">
+								<h5>tricks<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></h5>
+							</li>
+						</ul>
+					</div>
+				</section>
+			</section>
 			<section class="tsd-panel-group tsd-member-group tsd-is-not-exported">
 				<h2>Functions</h2>
 				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-external-module tsd-is-not-exported">
 					<a name="_validfails" class="tsd-anchor"></a>
 					<h3><span class="tsd-flag ts-flagConst">Const</span> _valid<wbr>Fails</h3>
 					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-external-module tsd-is-not-exported">
-						<li class="tsd-signature tsd-kind-icon">_valid<wbr>Fails<span class="tsd-signature-symbol">(</span>main<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">PrefPaperPlayer</span>, left<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">PrefPaperFollower</span>, right<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">PrefPaperFollower</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
+						<li class="tsd-signature tsd-kind-icon">_valid<wbr>Fails<span class="tsd-signature-symbol">(</span>main<span class="tsd-signature-symbol">: </span><a href="_prefscorehandgame_.html#prefscoremain" class="tsd-signature-type">PrefScoreMain</a>, left<span class="tsd-signature-symbol">: </span><a href="_prefscorehandgame_.html#prefscorefollower" class="tsd-signature-type">PrefScoreFollower</a>, right<span class="tsd-signature-symbol">: </span><a href="_prefscorehandgame_.html#prefscorefollower" class="tsd-signature-type">PrefScoreFollower</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/prefko/preferans-score-js/blob/a2e0ffe/src/prefScoreHandGame.ts#L13">prefScoreHandGame.ts:13</a></li>
+									<li>Defined in <a href="https://github.com/prefko/preferans-score-js/blob/3114bf9/src/prefScoreHandGame.ts#L12">src/prefScoreHandGame.ts:12</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>main: <span class="tsd-signature-type">PrefPaperPlayer</span></h5>
+									<h5>main: <a href="_prefscorehandgame_.html#prefscoremain" class="tsd-signature-type">PrefScoreMain</a></h5>
 								</li>
 								<li>
-									<h5>left: <span class="tsd-signature-type">PrefPaperFollower</span></h5>
+									<h5>left: <a href="_prefscorehandgame_.html#prefscorefollower" class="tsd-signature-type">PrefScoreFollower</a></h5>
 								</li>
 								<li>
-									<h5>right: <span class="tsd-signature-type">PrefPaperFollower</span></h5>
+									<h5>right: <a href="_prefscorehandgame_.html#prefscorefollower" class="tsd-signature-type">PrefScoreFollower</a></h5>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
@@ -121,25 +193,25 @@
 					<a name="_validtricks" class="tsd-anchor"></a>
 					<h3><span class="tsd-flag ts-flagConst">Const</span> _valid<wbr>Tricks</h3>
 					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-external-module tsd-is-not-exported">
-						<li class="tsd-signature tsd-kind-icon">_valid<wbr>Tricks<span class="tsd-signature-symbol">(</span>main<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">PrefPaperPlayer</span>, left<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">PrefPaperFollower</span>, right<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">PrefPaperFollower</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
+						<li class="tsd-signature tsd-kind-icon">_valid<wbr>Tricks<span class="tsd-signature-symbol">(</span>main<span class="tsd-signature-symbol">: </span><a href="_prefscorehandgame_.html#prefscoremain" class="tsd-signature-type">PrefScoreMain</a>, left<span class="tsd-signature-symbol">: </span><a href="_prefscorehandgame_.html#prefscorefollower" class="tsd-signature-type">PrefScoreFollower</a>, right<span class="tsd-signature-symbol">: </span><a href="_prefscorehandgame_.html#prefscorefollower" class="tsd-signature-type">PrefScoreFollower</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/prefko/preferans-score-js/blob/a2e0ffe/src/prefScoreHandGame.ts#L7">prefScoreHandGame.ts:7</a></li>
+									<li>Defined in <a href="https://github.com/prefko/preferans-score-js/blob/3114bf9/src/prefScoreHandGame.ts#L6">src/prefScoreHandGame.ts:6</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>main: <span class="tsd-signature-type">PrefPaperPlayer</span></h5>
+									<h5>main: <a href="_prefscorehandgame_.html#prefscoremain" class="tsd-signature-type">PrefScoreMain</a></h5>
 								</li>
 								<li>
-									<h5>left: <span class="tsd-signature-type">PrefPaperFollower</span></h5>
+									<h5>left: <a href="_prefscorehandgame_.html#prefscorefollower" class="tsd-signature-type">PrefScoreFollower</a></h5>
 								</li>
 								<li>
-									<h5>right: <span class="tsd-signature-type">PrefPaperFollower</span></h5>
+									<h5>right: <a href="_prefscorehandgame_.html#prefscorefollower" class="tsd-signature-type">PrefScoreFollower</a></h5>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
@@ -172,6 +244,15 @@
 				<ul class="before-current">
 					<li class=" tsd-kind-class tsd-parent-kind-external-module">
 						<a href="../classes/_prefscorehandgame_.prefscorehandgame.html" class="tsd-kind-icon">Pref<wbr>Score<wbr>Hand<wbr>Game</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-parent-kind-external-module tsd-is-not-exported">
+						<a href="_prefscorehandgame_.html#prefdesignation" class="tsd-kind-icon">Pref<wbr>Designation</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-parent-kind-external-module">
+						<a href="_prefscorehandgame_.html#prefscorefollower" class="tsd-kind-icon">Pref<wbr>Score<wbr>Follower</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-parent-kind-external-module">
+						<a href="_prefscorehandgame_.html#prefscoremain" class="tsd-kind-icon">Pref<wbr>Score<wbr>Main</a>
 					</li>
 					<li class=" tsd-kind-function tsd-parent-kind-external-module tsd-is-not-exported">
 						<a href="_prefscorehandgame_.html#_validfails" class="tsd-kind-icon">_valid<wbr>Fails</a>

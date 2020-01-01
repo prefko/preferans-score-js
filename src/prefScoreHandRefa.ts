@@ -17,7 +17,7 @@ export default class PrefScoreHandRefa extends PrefScoreHand {
 	}
 
 	get repealed() {
-		throw new Error('PrefScoreHand::set repealed:Invalid! Cannot have a refa hand repealed.');
+		return false;
 	}
 
 }

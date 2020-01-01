@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>PrefScore | preferans-score-js - v1.3.1</title>
+	<title>PrefScore | preferans-score-js - v1.4.0</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -22,7 +22,7 @@
 						<li class="state loading">Preparing search index...</li>
 						<li class="state failure">The search index is not available</li>
 					</ul>
-					<a href="../index.html" class="title">preferans-score-js - v1.3.1</a>
+					<a href="../index.html" class="title">preferans-score-js - v1.4.0</a>
 				</div>
 				<div class="table-cell" id="tsd-widgets">
 					<div id="tsd-filter">
@@ -93,11 +93,16 @@
 								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="_prefscore_.prefscore.html#_bula" class="tsd-kind-icon">_bula</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="_prefscore_.prefscore.html#_hands" class="tsd-kind-icon">_hands</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="_prefscore_.prefscore.html#_p1" class="tsd-kind-icon">_p1</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="_prefscore_.prefscore.html#_p1score" class="tsd-kind-icon">_p1score</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="_prefscore_.prefscore.html#_p1username" class="tsd-kind-icon">_p1username</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="_prefscore_.prefscore.html#_p2" class="tsd-kind-icon">_p2</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="_prefscore_.prefscore.html#_p2score" class="tsd-kind-icon">_p2score</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="_prefscore_.prefscore.html#_p2username" class="tsd-kind-icon">_p2username</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="_prefscore_.prefscore.html#_p3" class="tsd-kind-icon">_p3</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="_prefscore_.prefscore.html#_p3score" class="tsd-kind-icon">_p3score</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="_prefscore_.prefscore.html#_p3username" class="tsd-kind-icon">_p3username</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="_prefscore_.prefscore.html#_refas" class="tsd-kind-icon">_refas</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="_prefscore_.prefscore.html#_usedrefas" class="tsd-kind-icon">_used<wbr>Refas</a></li>
 							</ul>
 						</section>
 						<section class="tsd-index-section ">
@@ -105,6 +110,7 @@
 							<ul class="tsd-index-list">
 								<li class="tsd-kind-get-signature tsd-parent-kind-class"><a href="_prefscore_.prefscore.html#handcount" class="tsd-kind-icon">hand<wbr>Count</a></li>
 								<li class="tsd-kind-get-signature tsd-parent-kind-class"><a href="_prefscore_.prefscore.html#json" class="tsd-kind-icon">json</a></li>
+								<li class="tsd-kind-get-signature tsd-parent-kind-class"><a href="_prefscore_.prefscore.html#mini" class="tsd-kind-icon">mini</a></li>
 								<li class="tsd-kind-accessor tsd-parent-kind-class"><a href="_prefscore_.prefscore.html#username1" class="tsd-kind-icon">username1</a></li>
 								<li class="tsd-kind-accessor tsd-parent-kind-class"><a href="_prefscore_.prefscore.html#username2" class="tsd-kind-icon">username2</a></li>
 								<li class="tsd-kind-accessor tsd-parent-kind-class"><a href="_prefscore_.prefscore.html#username3" class="tsd-kind-icon">username3</a></li>
@@ -113,13 +119,16 @@
 						<section class="tsd-index-section ">
 							<h3>Methods</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_prefscore_.prefscore.html#addhand" class="tsd-kind-icon">add<wbr>Hand</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-private"><a href="_prefscore_.prefscore.html#getpaperbydesignation" class="tsd-kind-icon">get<wbr>Paper<wbr>ByDesignation</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-private"><a href="_prefscore_.prefscore.html#_getpaperbydesignation" class="tsd-kind-icon">_get<wbr>Paper<wbr>ByDesignation</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-private"><a href="_prefscore_.prefscore.html#_getscorebydesignation" class="tsd-kind-icon">_get<wbr>Score<wbr>ByDesignation</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-private"><a href="_prefscore_.prefscore.html#_hasunusedrefas" class="tsd-kind-icon">_has<wbr>Unused<wbr>Refas</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-private"><a href="_prefscore_.prefscore.html#_processhand" class="tsd-kind-icon">_process<wbr>Hand</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-private"><a href="_prefscore_.prefscore.html#_processnewrefa" class="tsd-kind-icon">_process<wbr>New<wbr>Refa</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-private"><a href="_prefscore_.prefscore.html#_recalculate" class="tsd-kind-icon">_recalculate</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-private"><a href="_prefscore_.prefscore.html#_setscorebydesignation" class="tsd-kind-icon">_set<wbr>Score<wbr>ByDesignation</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_prefscore_.prefscore.html#addplayedhand" class="tsd-kind-icon">add<wbr>Played<wbr>Hand</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_prefscore_.prefscore.html#addrefahand" class="tsd-kind-icon">add<wbr>Refa<wbr>Hand</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_prefscore_.prefscore.html#hasunplayedrefa" class="tsd-kind-icon">has<wbr>Unplayed<wbr>Refa</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_prefscore_.prefscore.html#hasunusedrefas" class="tsd-kind-icon">has<wbr>Unused<wbr>Refas</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-private"><a href="_prefscore_.prefscore.html#processhand" class="tsd-kind-icon">process<wbr>Hand</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-private"><a href="_prefscore_.prefscore.html#processnewrefa" class="tsd-kind-icon">process<wbr>New<wbr>Refa</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-private"><a href="_prefscore_.prefscore.html#recalculate" class="tsd-kind-icon">recalculate</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_prefscore_.prefscore.html#repealhand" class="tsd-kind-icon">repeal<wbr>Hand</a></li>
 							</ul>
 						</section>
@@ -138,7 +147,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/prefko/preferans-score-js/blob/a2e0ffe/src/prefScore.ts#L22">prefScore.ts:22</a></li>
+									<li>Defined in <a href="https://github.com/prefko/preferans-score-js/blob/3114bf9/src/prefScore.ts#L30">src/prefScore.ts:30</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -172,7 +181,7 @@
 					<div class="tsd-signature tsd-kind-icon">_bula<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/prefko/preferans-score-js/blob/a2e0ffe/src/prefScore.ts#L21">prefScore.ts:21</a></li>
+							<li>Defined in <a href="https://github.com/prefko/preferans-score-js/blob/3114bf9/src/prefScore.ts#L27">src/prefScore.ts:27</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -182,7 +191,7 @@
 					<div class="tsd-signature tsd-kind-icon">_hands<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Map</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">, </span><a href="_prefscorehand_.prefscorehand.html" class="tsd-signature-type">PrefScoreHand</a><span class="tsd-signature-symbol">&gt;</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/prefko/preferans-score-js/blob/a2e0ffe/src/prefScore.ts#L22">prefScore.ts:22</a></li>
+							<li>Defined in <a href="https://github.com/prefko/preferans-score-js/blob/3114bf9/src/prefScore.ts#L30">src/prefScore.ts:30</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -192,7 +201,17 @@
 					<div class="tsd-signature tsd-kind-icon">_p1<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">PrefPaper</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/prefko/preferans-score-js/blob/a2e0ffe/src/prefScore.ts#L13">prefScore.ts:13</a></li>
+							<li>Defined in <a href="https://github.com/prefko/preferans-score-js/blob/3114bf9/src/prefScore.ts#L15">src/prefScore.ts:15</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-private">
+					<a name="_p1score" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagPrivate">Private</span> _p1score</h3>
+					<div class="tsd-signature tsd-kind-icon">_p1score<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/prefko/preferans-score-js/blob/3114bf9/src/prefScore.ts#L23">src/prefScore.ts:23</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -202,7 +221,7 @@
 					<div class="tsd-signature tsd-kind-icon">_p1username<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/prefko/preferans-score-js/blob/a2e0ffe/src/prefScore.ts#L17">prefScore.ts:17</a></li>
+							<li>Defined in <a href="https://github.com/prefko/preferans-score-js/blob/3114bf9/src/prefScore.ts#L19">src/prefScore.ts:19</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -212,7 +231,17 @@
 					<div class="tsd-signature tsd-kind-icon">_p2<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">PrefPaper</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/prefko/preferans-score-js/blob/a2e0ffe/src/prefScore.ts#L14">prefScore.ts:14</a></li>
+							<li>Defined in <a href="https://github.com/prefko/preferans-score-js/blob/3114bf9/src/prefScore.ts#L16">src/prefScore.ts:16</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-private">
+					<a name="_p2score" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagPrivate">Private</span> _p2score</h3>
+					<div class="tsd-signature tsd-kind-icon">_p2score<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/prefko/preferans-score-js/blob/3114bf9/src/prefScore.ts#L24">src/prefScore.ts:24</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -222,7 +251,7 @@
 					<div class="tsd-signature tsd-kind-icon">_p2username<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/prefko/preferans-score-js/blob/a2e0ffe/src/prefScore.ts#L18">prefScore.ts:18</a></li>
+							<li>Defined in <a href="https://github.com/prefko/preferans-score-js/blob/3114bf9/src/prefScore.ts#L20">src/prefScore.ts:20</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -232,7 +261,17 @@
 					<div class="tsd-signature tsd-kind-icon">_p3<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">PrefPaper</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/prefko/preferans-score-js/blob/a2e0ffe/src/prefScore.ts#L15">prefScore.ts:15</a></li>
+							<li>Defined in <a href="https://github.com/prefko/preferans-score-js/blob/3114bf9/src/prefScore.ts#L17">src/prefScore.ts:17</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-private">
+					<a name="_p3score" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagPrivate">Private</span> _p3score</h3>
+					<div class="tsd-signature tsd-kind-icon">_p3score<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/prefko/preferans-score-js/blob/3114bf9/src/prefScore.ts#L25">src/prefScore.ts:25</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -242,7 +281,27 @@
 					<div class="tsd-signature tsd-kind-icon">_p3username<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/prefko/preferans-score-js/blob/a2e0ffe/src/prefScore.ts#L19">prefScore.ts:19</a></li>
+							<li>Defined in <a href="https://github.com/prefko/preferans-score-js/blob/3114bf9/src/prefScore.ts#L21">src/prefScore.ts:21</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-private">
+					<a name="_refas" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagPrivate">Private</span> _refas</h3>
+					<div class="tsd-signature tsd-kind-icon">_refas<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/prefko/preferans-score-js/blob/3114bf9/src/prefScore.ts#L28">src/prefScore.ts:28</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-private">
+					<a name="_usedrefas" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagPrivate">Private</span> _used<wbr>Refas</h3>
+					<div class="tsd-signature tsd-kind-icon">_used<wbr>Refas<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/prefko/preferans-score-js/blob/3114bf9/src/prefScore.ts#L29">src/prefScore.ts:29</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -259,7 +318,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/prefko/preferans-score-js/blob/a2e0ffe/src/prefScore.ts#L90">prefScore.ts:90</a></li>
+									<li>Defined in <a href="https://github.com/prefko/preferans-score-js/blob/3114bf9/src/prefScore.ts#L110">src/prefScore.ts:110</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4>
@@ -276,19 +335,179 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/prefko/preferans-score-js/blob/a2e0ffe/src/prefScore.ts#L102">prefScore.ts:102</a></li>
+									<li>Defined in <a href="https://github.com/prefko/preferans-score-js/blob/3114bf9/src/prefScore.ts#L130">src/prefScore.ts:130</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">object</span></h4>
 							<ul class="tsd-parameters">
 								<li class="tsd-parameter">
 									<h5>p1<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">object</span></h5>
+									<ul class="tsd-parameters">
+										<li class="tsd-parameter">
+											<h5>paper<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">object</span></h5>
+											<ul class="tsd-parameters">
+												<li class="tsd-parameter">
+													<h5>designation<span class="tsd-signature-symbol">: </span><a href="../modules/_prefscore_.html#prefdesignation" class="tsd-signature-type">PrefDesignation</a></h5>
+												</li>
+												<li class="tsd-parameter">
+													<h5>left<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">object</span><span class="tsd-signature-symbol">[]</span></h5>
+												</li>
+												<li class="tsd-parameter">
+													<h5>middle<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">object</span><span class="tsd-signature-symbol">[]</span></h5>
+												</li>
+												<li class="tsd-parameter">
+													<h5>right<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">object</span><span class="tsd-signature-symbol">[]</span></h5>
+												</li>
+											</ul>
+										</li>
+										<li class="tsd-parameter">
+											<h5>score<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></h5>
+										</li>
+									</ul>
 								</li>
 								<li class="tsd-parameter">
 									<h5>p2<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">object</span></h5>
+									<ul class="tsd-parameters">
+										<li class="tsd-parameter">
+											<h5>paper<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">object</span></h5>
+											<ul class="tsd-parameters">
+												<li class="tsd-parameter">
+													<h5>designation<span class="tsd-signature-symbol">: </span><a href="../modules/_prefscore_.html#prefdesignation" class="tsd-signature-type">PrefDesignation</a></h5>
+												</li>
+												<li class="tsd-parameter">
+													<h5>left<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">object</span><span class="tsd-signature-symbol">[]</span></h5>
+												</li>
+												<li class="tsd-parameter">
+													<h5>middle<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">object</span><span class="tsd-signature-symbol">[]</span></h5>
+												</li>
+												<li class="tsd-parameter">
+													<h5>right<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">object</span><span class="tsd-signature-symbol">[]</span></h5>
+												</li>
+											</ul>
+										</li>
+										<li class="tsd-parameter">
+											<h5>score<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></h5>
+										</li>
+									</ul>
 								</li>
 								<li class="tsd-parameter">
 									<h5>p3<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">object</span></h5>
+									<ul class="tsd-parameters">
+										<li class="tsd-parameter">
+											<h5>paper<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">object</span></h5>
+											<ul class="tsd-parameters">
+												<li class="tsd-parameter">
+													<h5>designation<span class="tsd-signature-symbol">: </span><a href="../modules/_prefscore_.html#prefdesignation" class="tsd-signature-type">PrefDesignation</a></h5>
+												</li>
+												<li class="tsd-parameter">
+													<h5>left<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">object</span><span class="tsd-signature-symbol">[]</span></h5>
+												</li>
+												<li class="tsd-parameter">
+													<h5>middle<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">object</span><span class="tsd-signature-symbol">[]</span></h5>
+												</li>
+												<li class="tsd-parameter">
+													<h5>right<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">object</span><span class="tsd-signature-symbol">[]</span></h5>
+												</li>
+											</ul>
+										</li>
+										<li class="tsd-parameter">
+											<h5>score<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></h5>
+										</li>
+									</ul>
+								</li>
+							</ul>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-get-signature tsd-parent-kind-class">
+					<a name="mini" class="tsd-anchor"></a>
+					<h3>mini</h3>
+					<ul class="tsd-signatures tsd-kind-get-signature tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">get</span> mini<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">object</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/prefko/preferans-score-js/blob/3114bf9/src/prefScore.ts#L122">src/prefScore.ts:122</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">object</span></h4>
+							<ul class="tsd-parameters">
+								<li class="tsd-parameter">
+									<h5>p1<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">object</span></h5>
+									<ul class="tsd-parameters">
+										<li class="tsd-parameter">
+											<h5>paper<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">object</span></h5>
+											<ul class="tsd-parameters">
+												<li class="tsd-parameter">
+													<h5>designation<span class="tsd-signature-symbol">: </span><a href="../modules/_prefscore_.html#prefdesignation" class="tsd-signature-type">PrefDesignation</a></h5>
+												</li>
+												<li class="tsd-parameter">
+													<h5>left<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></h5>
+												</li>
+												<li class="tsd-parameter">
+													<h5>middle<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></h5>
+												</li>
+												<li class="tsd-parameter">
+													<h5>right<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></h5>
+												</li>
+											</ul>
+										</li>
+										<li class="tsd-parameter">
+											<h5>score<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></h5>
+										</li>
+									</ul>
+								</li>
+								<li class="tsd-parameter">
+									<h5>p2<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">object</span></h5>
+									<ul class="tsd-parameters">
+										<li class="tsd-parameter">
+											<h5>paper<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">object</span></h5>
+											<ul class="tsd-parameters">
+												<li class="tsd-parameter">
+													<h5>designation<span class="tsd-signature-symbol">: </span><a href="../modules/_prefscore_.html#prefdesignation" class="tsd-signature-type">PrefDesignation</a></h5>
+												</li>
+												<li class="tsd-parameter">
+													<h5>left<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></h5>
+												</li>
+												<li class="tsd-parameter">
+													<h5>middle<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></h5>
+												</li>
+												<li class="tsd-parameter">
+													<h5>right<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></h5>
+												</li>
+											</ul>
+										</li>
+										<li class="tsd-parameter">
+											<h5>score<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></h5>
+										</li>
+									</ul>
+								</li>
+								<li class="tsd-parameter">
+									<h5>p3<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">object</span></h5>
+									<ul class="tsd-parameters">
+										<li class="tsd-parameter">
+											<h5>paper<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">object</span></h5>
+											<ul class="tsd-parameters">
+												<li class="tsd-parameter">
+													<h5>designation<span class="tsd-signature-symbol">: </span><a href="../modules/_prefscore_.html#prefdesignation" class="tsd-signature-type">PrefDesignation</a></h5>
+												</li>
+												<li class="tsd-parameter">
+													<h5>left<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></h5>
+												</li>
+												<li class="tsd-parameter">
+													<h5>middle<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></h5>
+												</li>
+												<li class="tsd-parameter">
+													<h5>right<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></h5>
+												</li>
+											</ul>
+										</li>
+										<li class="tsd-parameter">
+											<h5>score<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></h5>
+										</li>
+									</ul>
 								</li>
 							</ul>
 						</li>
@@ -305,7 +524,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/prefko/preferans-score-js/blob/a2e0ffe/src/prefScore.ts#L66">prefScore.ts:66</a></li>
+									<li>Defined in <a href="https://github.com/prefko/preferans-score-js/blob/3114bf9/src/prefScore.ts#L86">src/prefScore.ts:86</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4>
@@ -313,7 +532,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/prefko/preferans-score-js/blob/a2e0ffe/src/prefScore.ts#L70">prefScore.ts:70</a></li>
+									<li>Defined in <a href="https://github.com/prefko/preferans-score-js/blob/3114bf9/src/prefScore.ts#L90">src/prefScore.ts:90</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -337,7 +556,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/prefko/preferans-score-js/blob/a2e0ffe/src/prefScore.ts#L74">prefScore.ts:74</a></li>
+									<li>Defined in <a href="https://github.com/prefko/preferans-score-js/blob/3114bf9/src/prefScore.ts#L94">src/prefScore.ts:94</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4>
@@ -345,7 +564,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/prefko/preferans-score-js/blob/a2e0ffe/src/prefScore.ts#L78">prefScore.ts:78</a></li>
+									<li>Defined in <a href="https://github.com/prefko/preferans-score-js/blob/3114bf9/src/prefScore.ts#L98">src/prefScore.ts:98</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -369,7 +588,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/prefko/preferans-score-js/blob/a2e0ffe/src/prefScore.ts#L82">prefScore.ts:82</a></li>
+									<li>Defined in <a href="https://github.com/prefko/preferans-score-js/blob/3114bf9/src/prefScore.ts#L102">src/prefScore.ts:102</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4>
@@ -377,7 +596,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/prefko/preferans-score-js/blob/a2e0ffe/src/prefScore.ts#L86">prefScore.ts:86</a></li>
+									<li>Defined in <a href="https://github.com/prefko/preferans-score-js/blob/3114bf9/src/prefScore.ts#L106">src/prefScore.ts:106</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -393,17 +612,80 @@
 			</section>
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Methods</h2>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
-					<a name="addhand" class="tsd-anchor"></a>
-					<h3>add<wbr>Hand</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">add<wbr>Hand<span class="tsd-signature-symbol">(</span>hand<span class="tsd-signature-symbol">: </span><a href="_prefscorehand_.prefscorehand.html" class="tsd-signature-type">PrefScoreHand</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_prefscore_.prefscore.html" class="tsd-signature-type">PrefScore</a></li>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-private">
+					<a name="_getpaperbydesignation" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagPrivate">Private</span> _get<wbr>Paper<wbr>ByDesignation</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-private">
+						<li class="tsd-signature tsd-kind-icon">_get<wbr>Paper<wbr>ByDesignation<span class="tsd-signature-symbol">(</span>designation<span class="tsd-signature-symbol">: </span><a href="../modules/_prefscore_.html#prefdesignation" class="tsd-signature-type">PrefDesignation</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">PrefPaper</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/prefko/preferans-score-js/blob/a2e0ffe/src/prefScore.ts#L37">prefScore.ts:37</a></li>
+									<li>Defined in <a href="https://github.com/prefko/preferans-score-js/blob/3114bf9/src/prefScore.ts#L209">src/prefScore.ts:209</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>designation: <a href="../modules/_prefscore_.html#prefdesignation" class="tsd-signature-type">PrefDesignation</a></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">PrefPaper</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-private">
+					<a name="_getscorebydesignation" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagPrivate">Private</span> _get<wbr>Score<wbr>ByDesignation</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-private">
+						<li class="tsd-signature tsd-kind-icon">_get<wbr>Score<wbr>ByDesignation<span class="tsd-signature-symbol">(</span>designation<span class="tsd-signature-symbol">: </span><a href="../modules/_prefscore_.html#prefdesignation" class="tsd-signature-type">PrefDesignation</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/prefko/preferans-score-js/blob/3114bf9/src/prefScore.ts#L197">src/prefScore.ts:197</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>designation: <a href="../modules/_prefscore_.html#prefdesignation" class="tsd-signature-type">PrefDesignation</a></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-private">
+					<a name="_hasunusedrefas" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagPrivate">Private</span> _has<wbr>Unused<wbr>Refas</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-private">
+						<li class="tsd-signature tsd-kind-icon">_has<wbr>Unused<wbr>Refas<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/prefko/preferans-score-js/blob/3114bf9/src/prefScore.ts#L152">src/prefScore.ts:152</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-private">
+					<a name="_processhand" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagPrivate">Private</span> _process<wbr>Hand</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-private">
+						<li class="tsd-signature tsd-kind-icon">_process<wbr>Hand<span class="tsd-signature-symbol">(</span>hand<span class="tsd-signature-symbol">: </span><a href="_prefscorehand_.prefscorehand.html" class="tsd-signature-type">PrefScoreHand</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">this</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/prefko/preferans-score-js/blob/3114bf9/src/prefScore.ts#L157">src/prefScore.ts:157</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -412,30 +694,116 @@
 									<h5>hand: <a href="_prefscorehand_.prefscorehand.html" class="tsd-signature-type">PrefScoreHand</a></h5>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <a href="_prefscore_.prefscore.html" class="tsd-signature-type">PrefScore</a></h4>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">this</span></h4>
 						</li>
 					</ul>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-private">
-					<a name="getpaperbydesignation" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagPrivate">Private</span> get<wbr>Paper<wbr>ByDesignation</h3>
+					<a name="_processnewrefa" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagPrivate">Private</span> _process<wbr>New<wbr>Refa</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-private">
-						<li class="tsd-signature tsd-kind-icon">get<wbr>Paper<wbr>ByDesignation<span class="tsd-signature-symbol">(</span>designation<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">"p1"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"p2"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"p3"</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">PrefPaper</span></li>
+						<li class="tsd-signature tsd-kind-icon">_process<wbr>New<wbr>Refa<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">this</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/prefko/preferans-score-js/blob/a2e0ffe/src/prefScore.ts#L142">prefScore.ts:142</a></li>
+									<li>Defined in <a href="https://github.com/prefko/preferans-score-js/blob/3114bf9/src/prefScore.ts#L215">src/prefScore.ts:215</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">this</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-private">
+					<a name="_recalculate" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagPrivate">Private</span> _recalculate</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-private">
+						<li class="tsd-signature tsd-kind-icon">_recalculate<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_prefscore_.prefscore.html" class="tsd-signature-type">PrefScore</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/prefko/preferans-score-js/blob/3114bf9/src/prefScore.ts#L138">src/prefScore.ts:138</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-returns-title">Returns <a href="_prefscore_.prefscore.html" class="tsd-signature-type">PrefScore</a></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-private">
+					<a name="_setscorebydesignation" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagPrivate">Private</span> _set<wbr>Score<wbr>ByDesignation</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-private">
+						<li class="tsd-signature tsd-kind-icon">_set<wbr>Score<wbr>ByDesignation<span class="tsd-signature-symbol">(</span>designation<span class="tsd-signature-symbol">: </span><a href="../modules/_prefscore_.html#prefdesignation" class="tsd-signature-type">PrefDesignation</a>, score<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/prefko/preferans-score-js/blob/3114bf9/src/prefScore.ts#L203">src/prefScore.ts:203</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>designation: <span class="tsd-signature-type">"p1"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"p2"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"p3"</span></h5>
+									<h5>designation: <a href="../modules/_prefscore_.html#prefdesignation" class="tsd-signature-type">PrefDesignation</a></h5>
+								</li>
+								<li>
+									<h5>score: <span class="tsd-signature-type">number</span></h5>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">PrefPaper</span></h4>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="addplayedhand" class="tsd-anchor"></a>
+					<h3>add<wbr>Played<wbr>Hand</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">add<wbr>Played<wbr>Hand<span class="tsd-signature-symbol">(</span>value<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, main<span class="tsd-signature-symbol">: </span><a href="../modules/_prefscorehandgame_.html#prefscoremain" class="tsd-signature-type">PrefScoreMain</a>, left<span class="tsd-signature-symbol">: </span><a href="../modules/_prefscorehandgame_.html#prefscorefollower" class="tsd-signature-type">PrefScoreFollower</a>, right<span class="tsd-signature-symbol">: </span><a href="../modules/_prefscorehandgame_.html#prefscorefollower" class="tsd-signature-type">PrefScoreFollower</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_prefscore_.prefscore.html" class="tsd-signature-type">PrefScore</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/prefko/preferans-score-js/blob/3114bf9/src/prefScore.ts#L62">src/prefScore.ts:62</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>value: <span class="tsd-signature-type">number</span></h5>
+								</li>
+								<li>
+									<h5>main: <a href="../modules/_prefscorehandgame_.html#prefscoremain" class="tsd-signature-type">PrefScoreMain</a></h5>
+								</li>
+								<li>
+									<h5>left: <a href="../modules/_prefscorehandgame_.html#prefscorefollower" class="tsd-signature-type">PrefScoreFollower</a></h5>
+								</li>
+								<li>
+									<h5>right: <a href="../modules/_prefscorehandgame_.html#prefscorefollower" class="tsd-signature-type">PrefScoreFollower</a></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="_prefscore_.prefscore.html" class="tsd-signature-type">PrefScore</a></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="addrefahand" class="tsd-anchor"></a>
+					<h3>add<wbr>Refa<wbr>Hand</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">add<wbr>Refa<wbr>Hand<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_prefscore_.prefscore.html" class="tsd-signature-type">PrefScore</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/prefko/preferans-score-js/blob/3114bf9/src/prefScore.ts#L51">src/prefScore.ts:51</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-returns-title">Returns <a href="_prefscore_.prefscore.html" class="tsd-signature-type">PrefScore</a></h4>
 						</li>
 					</ul>
 				</section>
@@ -443,96 +811,22 @@
 					<a name="hasunplayedrefa" class="tsd-anchor"></a>
 					<h3>has<wbr>Unplayed<wbr>Refa</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">has<wbr>Unplayed<wbr>Refa<span class="tsd-signature-symbol">(</span>designation<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">"p1"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"p2"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"p3"</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
+						<li class="tsd-signature tsd-kind-icon">has<wbr>Unplayed<wbr>Refa<span class="tsd-signature-symbol">(</span>designation<span class="tsd-signature-symbol">: </span><a href="../modules/_prefscore_.html#prefdesignation" class="tsd-signature-type">PrefDesignation</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/prefko/preferans-score-js/blob/a2e0ffe/src/prefScore.ts#L62">prefScore.ts:62</a></li>
+									<li>Defined in <a href="https://github.com/prefko/preferans-score-js/blob/3114bf9/src/prefScore.ts#L82">src/prefScore.ts:82</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>designation: <span class="tsd-signature-type">"p1"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"p2"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"p3"</span></h5>
+									<h5>designation: <a href="../modules/_prefscore_.html#prefdesignation" class="tsd-signature-type">PrefDesignation</a></h5>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
-						</li>
-					</ul>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
-					<a name="hasunusedrefas" class="tsd-anchor"></a>
-					<h3>has<wbr>Unused<wbr>Refas</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">has<wbr>Unused<wbr>Refas<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in <a href="https://github.com/prefko/preferans-score-js/blob/a2e0ffe/src/prefScore.ts#L58">prefScore.ts:58</a></li>
-								</ul>
-							</aside>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
-						</li>
-					</ul>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-private">
-					<a name="processhand" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagPrivate">Private</span> process<wbr>Hand</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-private">
-						<li class="tsd-signature tsd-kind-icon">process<wbr>Hand<span class="tsd-signature-symbol">(</span>hand<span class="tsd-signature-symbol">: </span><a href="_prefscorehand_.prefscorehand.html" class="tsd-signature-type">PrefScoreHand</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">this</span></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in <a href="https://github.com/prefko/preferans-score-js/blob/a2e0ffe/src/prefScore.ts#L120">prefScore.ts:120</a></li>
-								</ul>
-							</aside>
-							<h4 class="tsd-parameters-title">Parameters</h4>
-							<ul class="tsd-parameters">
-								<li>
-									<h5>hand: <a href="_prefscorehand_.prefscorehand.html" class="tsd-signature-type">PrefScoreHand</a></h5>
-								</li>
-							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">this</span></h4>
-						</li>
-					</ul>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-private">
-					<a name="processnewrefa" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagPrivate">Private</span> process<wbr>New<wbr>Refa</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-private">
-						<li class="tsd-signature tsd-kind-icon">process<wbr>New<wbr>Refa<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">this</span></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in <a href="https://github.com/prefko/preferans-score-js/blob/a2e0ffe/src/prefScore.ts#L148">prefScore.ts:148</a></li>
-								</ul>
-							</aside>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">this</span></h4>
-						</li>
-					</ul>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-private">
-					<a name="recalculate" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagPrivate">Private</span> recalculate</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-private">
-						<li class="tsd-signature tsd-kind-icon">recalculate<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_prefscore_.prefscore.html" class="tsd-signature-type">PrefScore</a></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in <a href="https://github.com/prefko/preferans-score-js/blob/a2e0ffe/src/prefScore.ts#L110">prefScore.ts:110</a></li>
-								</ul>
-							</aside>
-							<h4 class="tsd-returns-title">Returns <a href="_prefscore_.prefscore.html" class="tsd-signature-type">PrefScore</a></h4>
 						</li>
 					</ul>
 				</section>
@@ -546,7 +840,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/prefko/preferans-score-js/blob/a2e0ffe/src/prefScore.ts#L46">prefScore.ts:46</a></li>
+									<li>Defined in <a href="https://github.com/prefko/preferans-score-js/blob/3114bf9/src/prefScore.ts#L70">src/prefScore.ts:70</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -601,10 +895,16 @@
 								<a href="_prefscore_.prefscore.html#_p1" class="tsd-kind-icon">_p1</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-private">
+								<a href="_prefscore_.prefscore.html#_p1score" class="tsd-kind-icon">_p1score</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-private">
 								<a href="_prefscore_.prefscore.html#_p1username" class="tsd-kind-icon">_p1username</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-private">
 								<a href="_prefscore_.prefscore.html#_p2" class="tsd-kind-icon">_p2</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-private">
+								<a href="_prefscore_.prefscore.html#_p2score" class="tsd-kind-icon">_p2score</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-private">
 								<a href="_prefscore_.prefscore.html#_p2username" class="tsd-kind-icon">_p2username</a>
@@ -613,13 +913,25 @@
 								<a href="_prefscore_.prefscore.html#_p3" class="tsd-kind-icon">_p3</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-private">
+								<a href="_prefscore_.prefscore.html#_p3score" class="tsd-kind-icon">_p3score</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-private">
 								<a href="_prefscore_.prefscore.html#_p3username" class="tsd-kind-icon">_p3username</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-private">
+								<a href="_prefscore_.prefscore.html#_refas" class="tsd-kind-icon">_refas</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-private">
+								<a href="_prefscore_.prefscore.html#_usedrefas" class="tsd-kind-icon">_used<wbr>Refas</a>
 							</li>
 							<li class=" tsd-kind-get-signature tsd-parent-kind-class">
 								<a href="_prefscore_.prefscore.html#handcount" class="tsd-kind-icon">hand<wbr>Count</a>
 							</li>
 							<li class=" tsd-kind-get-signature tsd-parent-kind-class">
 								<a href="_prefscore_.prefscore.html#json" class="tsd-kind-icon">json</a>
+							</li>
+							<li class=" tsd-kind-get-signature tsd-parent-kind-class">
+								<a href="_prefscore_.prefscore.html#mini" class="tsd-kind-icon">mini</a>
 							</li>
 							<li class=" tsd-kind-accessor tsd-parent-kind-class">
 								<a href="_prefscore_.prefscore.html#username1" class="tsd-kind-icon">username1</a>
@@ -630,26 +942,35 @@
 							<li class=" tsd-kind-accessor tsd-parent-kind-class">
 								<a href="_prefscore_.prefscore.html#username3" class="tsd-kind-icon">username3</a>
 							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class">
-								<a href="_prefscore_.prefscore.html#addhand" class="tsd-kind-icon">add<wbr>Hand</a>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-private">
+								<a href="_prefscore_.prefscore.html#_getpaperbydesignation" class="tsd-kind-icon">_get<wbr>Paper<wbr>ByDesignation</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-private">
-								<a href="_prefscore_.prefscore.html#getpaperbydesignation" class="tsd-kind-icon">get<wbr>Paper<wbr>ByDesignation</a>
+								<a href="_prefscore_.prefscore.html#_getscorebydesignation" class="tsd-kind-icon">_get<wbr>Score<wbr>ByDesignation</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-private">
+								<a href="_prefscore_.prefscore.html#_hasunusedrefas" class="tsd-kind-icon">_has<wbr>Unused<wbr>Refas</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-private">
+								<a href="_prefscore_.prefscore.html#_processhand" class="tsd-kind-icon">_process<wbr>Hand</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-private">
+								<a href="_prefscore_.prefscore.html#_processnewrefa" class="tsd-kind-icon">_process<wbr>New<wbr>Refa</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-private">
+								<a href="_prefscore_.prefscore.html#_recalculate" class="tsd-kind-icon">_recalculate</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-private">
+								<a href="_prefscore_.prefscore.html#_setscorebydesignation" class="tsd-kind-icon">_set<wbr>Score<wbr>ByDesignation</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="_prefscore_.prefscore.html#addplayedhand" class="tsd-kind-icon">add<wbr>Played<wbr>Hand</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="_prefscore_.prefscore.html#addrefahand" class="tsd-kind-icon">add<wbr>Refa<wbr>Hand</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class">
 								<a href="_prefscore_.prefscore.html#hasunplayedrefa" class="tsd-kind-icon">has<wbr>Unplayed<wbr>Refa</a>
-							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class">
-								<a href="_prefscore_.prefscore.html#hasunusedrefas" class="tsd-kind-icon">has<wbr>Unused<wbr>Refas</a>
-							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-private">
-								<a href="_prefscore_.prefscore.html#processhand" class="tsd-kind-icon">process<wbr>Hand</a>
-							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-private">
-								<a href="_prefscore_.prefscore.html#processnewrefa" class="tsd-kind-icon">process<wbr>New<wbr>Refa</a>
-							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-private">
-								<a href="_prefscore_.prefscore.html#recalculate" class="tsd-kind-icon">recalculate</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class">
 								<a href="_prefscore_.prefscore.html#repealhand" class="tsd-kind-icon">repeal<wbr>Hand</a>
@@ -658,6 +979,9 @@
 					</li>
 				</ul>
 				<ul class="after-current">
+					<li class=" tsd-kind-type-alias tsd-parent-kind-external-module tsd-is-not-exported">
+						<a href="../modules/_prefscore_.html#prefdesignation" class="tsd-kind-icon">Pref<wbr>Designation</a>
+					</li>
 				</ul>
 			</nav>
 		</div>

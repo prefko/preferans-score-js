@@ -13,14 +13,16 @@ describe('PrefScoreHandRefa tests', () => {
 		});
 	});
 
-	describe('PrefScoreHand methods tests', () => {
+	describe('PrefScoreHandRefa methods tests', () => {
 		const hand = new PrefScoreHandRefa();
 		hand.index = 1;
-		it('PrefScoreHand methods should work properly', () => {
+		it('PrefScoreHandRefa methods should work properly', () => {
 			expect(new PrefScoreHandRefa().index).to.equal(0);
-			expect(() => new PrefScoreHandRefa().repealed).to.throw();
+			expect(() => new PrefScoreHandRefa().repealed).to.not.throw();
+			expect(new PrefScoreHandRefa().repealed).to.equal(false);
 			expect(() => hand.repealed = true).to.throw();
-			expect(() => hand.repealed).to.throw();
+			expect(() => hand.repealed).to.not.throw();
+			expect(hand.repealed).to.equal(false);
 			expect(hand.index).to.equal(1);
 			expect(hand.refa).to.equal(true);
 			expect(hand.game).to.equal(false);
