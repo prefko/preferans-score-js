@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 'use strict';
 
-import { expect } from 'chai';
+import {expect} from 'chai';
 import PrefScoreHandRefa from '../src/prefScoreHandRefa';
 
 describe('PrefScoreHandRefa tests', () => {
