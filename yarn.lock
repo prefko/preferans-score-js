@@ -1390,9 +1390,10 @@ pkg-dir@^4.1.0:
   dependencies:
     find-up "^4.0.0"
 
-preferans-paper-js@*:
-  version "3.1.1"
-  resolved "https://registry.yarnpkg.com/preferans-paper-js/-/preferans-paper-js-3.1.1.tgz#7487586fba2c6e20a2eb3e45912c5e610799d676"
+preferans-paper-js@>=3.1.2:
+  version "3.1.2"
+  resolved "https://registry.yarnpkg.com/preferans-paper-js/-/preferans-paper-js-3.1.2.tgz#1080f25b79a461b6b50090de5b59fbd0f84b5649"
+  integrity sha512-FXzml8eg4RwMiG0UsGSbZCrPGzo/Y4v2ziduoN0Z+e9GRHJp1wKeGaVADEOo4eO0KSXg5yKrpsr1YnL6OxIHQQ==
   dependencies:
     "@types/lodash" "^4.14.149"
     lodash "^4.17.15"
