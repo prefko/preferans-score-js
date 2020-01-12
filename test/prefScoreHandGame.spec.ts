@@ -1,15 +1,16 @@
 #!/usr/bin/env node
 'use strict';
 
-import { expect } from 'chai';
-import PrefScoreHandGame, { PrefScoreFollower, PrefScoreMain } from '../src/prefScoreHandGame';
+import {expect} from 'chai';
+import PrefScoreHandGame from '../src/prefScoreHandGame';
+import {PrefScoreFollower, PrefScoreMain} from "../src/prefScore.types";
 
 describe('PrefScoreHandGame tests', () => {
 
 	describe('PrefScoreHandGame classes constructors tests', () => {
-		const main: PrefScoreMain = { designation: 'p1', tricks: 6, failed: false };
-		const left: PrefScoreFollower = { designation: 'p2', tricks: 2, failed: false, followed: true };
-		const right: PrefScoreFollower = { designation: 'p3', tricks: 2, failed: false, followed: true };
+		const main: PrefScoreMain = {designation: 'p1', tricks: 6, failed: false};
+		const left: PrefScoreFollower = {designation: 'p2', tricks: 2, failed: false, followed: true};
+		const right: PrefScoreFollower = {designation: 'p3', tricks: 2, failed: false, followed: true};
 		it('constructors should work', () => {
 			expect(() => new PrefScoreHandGame(10, main, left, right)).to.not.throw();
 			expect(new PrefScoreHandGame(10, main, left, right)).to.be.an('object');
@@ -17,9 +18,9 @@ describe('PrefScoreHandGame tests', () => {
 	});
 
 	describe('PrefScoreHandGame methods tests', () => {
-		const main: PrefScoreMain = { designation: 'p1', tricks: 6, failed: false };
-		const left: PrefScoreFollower = { designation: 'p2', tricks: 2, failed: false, followed: true };
-		const right: PrefScoreFollower = { designation: 'p3', tricks: 2, failed: false, followed: true };
+		const main: PrefScoreMain = {designation: 'p1', tricks: 6, failed: false};
+		const left: PrefScoreFollower = {designation: 'p2', tricks: 2, failed: false, followed: true};
+		const right: PrefScoreFollower = {designation: 'p3', tricks: 2, failed: false, followed: true};
 		const hand = new PrefScoreHandGame(10, main, left, right);
 		hand.index = 1;
 		hand.repealed = true;
@@ -34,20 +35,20 @@ describe('PrefScoreHandGame tests', () => {
 	});
 
 	describe('PrefScoreHandGame methods tests', () => {
-		const main: PrefScoreMain = { designation: 'p1', tricks: 6, failed: false };
-		const mainFailed: PrefScoreMain = { designation: 'p1', tricks: 5, failed: true };
-		const mainFailed2: PrefScoreMain = { designation: 'p1', tricks: 6, failed: true };
-		const mainWrong: PrefScoreMain = { designation: 'p1', tricks: 5, failed: true };
+		const main: PrefScoreMain = {designation: 'p1', tricks: 6, failed: false};
+		const mainFailed: PrefScoreMain = {designation: 'p1', tricks: 5, failed: true};
+		const mainFailed2: PrefScoreMain = {designation: 'p1', tricks: 6, failed: true};
+		const mainWrong: PrefScoreMain = {designation: 'p1', tricks: 5, failed: true};
 
-		const left: PrefScoreFollower = { designation: 'p2', tricks: 2, failed: false, followed: true };
-		const leftFailed: PrefScoreFollower = { designation: 'p2', tricks: 3, failed: true, followed: true };
-		const leftFailed2: PrefScoreFollower = { designation: 'p2', tricks: 2, failed: true, followed: true };
-		const leftWrong: PrefScoreFollower = { designation: 'p2', tricks: 4, failed: false, followed: true };
+		const left: PrefScoreFollower = {designation: 'p2', tricks: 2, failed: false, followed: true};
+		const leftFailed: PrefScoreFollower = {designation: 'p2', tricks: 3, failed: true, followed: true};
+		const leftFailed2: PrefScoreFollower = {designation: 'p2', tricks: 2, failed: true, followed: true};
+		const leftWrong: PrefScoreFollower = {designation: 'p2', tricks: 4, failed: false, followed: true};
 
-		const right: PrefScoreFollower = { designation: 'p3', tricks: 2, failed: false, followed: true };
-		const rightFailed: PrefScoreFollower = { designation: 'p3', tricks: 3, failed: true, followed: true };
-		const rightFailed2: PrefScoreFollower = { designation: 'p3', tricks: 2, failed: true, followed: true };
-		const rightWrong: PrefScoreFollower = { designation: 'p3', tricks: 4, failed: false, followed: true };
+		const right: PrefScoreFollower = {designation: 'p3', tricks: 2, failed: false, followed: true};
+		const rightFailed: PrefScoreFollower = {designation: 'p3', tricks: 3, failed: true, followed: true};
+		const rightFailed2: PrefScoreFollower = {designation: 'p3', tricks: 2, failed: true, followed: true};
+		const rightWrong: PrefScoreFollower = {designation: 'p3', tricks: 4, failed: false, followed: true};
 
 		const game = new PrefScoreHandGame(10, main, left, right);
 		it('PrefScoreHandGame methods should work properly', () => {

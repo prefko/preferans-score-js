@@ -1,15 +1,14 @@
 #!/usr/bin/env node
 'use strict';
 
-import { size } from 'lodash';
+import {size} from 'lodash';
 import PrefPaper from 'preferans-paper-js';
 import PrefScoreHand from './prefScoreHand';
-import PrefScoreHandGame, { PrefScoreFollower, PrefScoreMain } from './prefScoreHandGame';
+import PrefScoreHandGame from './prefScoreHandGame';
 import PrefScoreHandRefa from './prefScoreHandRefa';
+import {PrefDesignation, PrefScoreMain, PrefScoreFollower} from "./prefScore.types";
 
-type PrefDesignation = 'p1' | 'p2' | 'p3';
-
-export { PrefScoreMain, PrefScoreFollower };
+export {PrefScoreMain, PrefScoreFollower};
 
 export default class PrefScore {
 	private readonly _p1: PrefPaper;
@@ -121,17 +120,17 @@ export default class PrefScore {
 
 	get mini() {
 		return {
-			p1: { score: this._p1score, paper: this._p1.mini },
-			p2: { score: this._p2score, paper: this._p2.mini },
-			p3: { score: this._p3score, paper: this._p3.mini },
+			p1: {score: this._p1score, paper: this._p1.mini},
+			p2: {score: this._p2score, paper: this._p2.mini},
+			p3: {score: this._p3score, paper: this._p3.mini},
 		};
 	}
 
 	get json() {
 		return {
-			p1: { score: this._p1score, paper: this._p1.json },
-			p2: { score: this._p2score, paper: this._p2.json },
-			p3: { score: this._p3score, paper: this._p3.json },
+			p1: {score: this._p1score, paper: this._p1.json},
+			p2: {score: this._p2score, paper: this._p2.json},
+			p3: {score: this._p3score, paper: this._p3.json},
 		};
 	}
 

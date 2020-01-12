@@ -1,8 +1,9 @@
 #!/usr/bin/env node
 'use strict';
 
-import { expect } from 'chai';
-import PrefScore, { PrefScoreFollower, PrefScoreMain } from '../src/prefScore';
+import {expect} from 'chai';
+import PrefScore from '../src/prefScore';
+import {PrefScoreFollower, PrefScoreMain} from "../src/prefScore.types";
 
 describe('PrefScore tests', () => {
 
@@ -19,15 +20,15 @@ describe('PrefScore tests', () => {
 		const json = {
 			p1: {
 				score: -600,
-				paper: { designation: 'p1', left: [], middle: [60], right: [] },
+				paper: {designation: 'p1', left: [], middle: [60], right: []},
 			},
 			p2: {
 				score: -600,
-				paper: { designation: 'p2', left: [], middle: [60], right: [] },
+				paper: {designation: 'p2', left: [], middle: [60], right: []},
 			},
 			p3: {
 				score: -600,
-				paper: { designation: 'p3', left: [], middle: [60], right: [] },
+				paper: {designation: 'p3', left: [], middle: [60], right: []},
 			},
 		};
 		const score = new PrefScore('cope', 'milja', 'mitko', 60, 0);
@@ -49,7 +50,7 @@ describe('PrefScore tests', () => {
 				paper: {
 					designation: 'p1',
 					left: [],
-					middle: [60, { left: 0, middle: 0, right: 0 }],
+					middle: [60, {left: 0, middle: 0, right: 0}],
 					right: [],
 				},
 			},
@@ -58,7 +59,7 @@ describe('PrefScore tests', () => {
 				paper: {
 					designation: 'p2',
 					left: [],
-					middle: [60, { left: 0, middle: 0, right: 0 }],
+					middle: [60, {left: 0, middle: 0, right: 0}],
 					right: [],
 				},
 			},
@@ -67,7 +68,7 @@ describe('PrefScore tests', () => {
 				paper: {
 					designation: 'p3',
 					left: [],
-					middle: [60, { left: 0, middle: 0, right: 0 }],
+					middle: [60, {left: 0, middle: 0, right: 0}],
 					right: [],
 				},
 			},
@@ -90,9 +91,9 @@ describe('PrefScore tests', () => {
 					left: [],
 					middle: [
 						60,
-						{ left: 0, middle: 0, right: 0 },
-						{ value: 50, repealed: true },
-						{ value: 40, repealed: true },
+						{left: 0, middle: 0, right: 0},
+						{value: 50, repealed: true},
+						{value: 40, repealed: true},
 					],
 					right: [],
 				},
@@ -101,8 +102,8 @@ describe('PrefScore tests', () => {
 				score: -500,
 				paper: {
 					designation: 'p2',
-					left: [{ value: 20, repealed: true }, { value: 40, repealed: true }],
-					middle: [60, { left: 0, middle: 1, right: 0 }, { value: 50, repealed: true }, 50],
+					left: [{value: 20, repealed: true}, {value: 40, repealed: true}],
+					middle: [60, {left: 0, middle: 1, right: 0}, {value: 50, repealed: true}, 50],
 					right: [],
 				},
 			},
@@ -111,38 +112,38 @@ describe('PrefScore tests', () => {
 				paper: {
 					designation: 'p3',
 					left: [],
-					middle: [60, { left: 0, middle: 0, right: 0 }],
-					right: [{ value: 20, repealed: true }, { value: 40, repealed: true }],
+					middle: [60, {left: 0, middle: 0, right: 0}],
+					right: [{value: 20, repealed: true}, {value: 40, repealed: true}],
 				},
 			},
 		};
 		const mini3 = {
 			p1: {
 				score: -600,
-				paper: { designation: 'p1', left: 0, middle: 60, right: 0 },
+				paper: {designation: 'p1', left: 0, middle: 60, right: 0},
 			},
 			p2: {
 				score: -500,
-				paper: { designation: 'p2', left: 0, middle: 50, right: 0 },
+				paper: {designation: 'p2', left: 0, middle: 50, right: 0},
 			},
 			p3: {
 				score: -600,
-				paper: { designation: 'p3', left: 0, middle: 60, right: 0 },
+				paper: {designation: 'p3', left: 0, middle: 60, right: 0},
 			},
 		};
 		const score3 = new PrefScore('cope', 'milja', 'mitko', 60, 1);
 		score3.addRefaHand();
-		const main: PrefScoreMain = { designation: 'p1', tricks: 6, failed: false };
-		const right: PrefScoreFollower = { designation: 'p2', tricks: 2, failed: false, followed: true };
-		const left: PrefScoreFollower = { designation: 'p3', tricks: 2, failed: false, followed: true };
+		const main: PrefScoreMain = {designation: 'p1', tricks: 6, failed: false};
+		const right: PrefScoreFollower = {designation: 'p2', tricks: 2, failed: false, followed: true};
+		const left: PrefScoreFollower = {designation: 'p3', tricks: 2, failed: false, followed: true};
 
-		const main2: PrefScoreMain = { designation: 'p2', tricks: 6, failed: false };
-		const right2: PrefScoreFollower = { designation: 'p3', followed: false, tricks: 0, failed: false };
-		const left2: PrefScoreFollower = { designation: 'p1', followed: false, tricks: 0, failed: false };
+		const main2: PrefScoreMain = {designation: 'p2', tricks: 6, failed: false};
+		const right2: PrefScoreFollower = {designation: 'p3', followed: false, tricks: 0, failed: false};
+		const left2: PrefScoreFollower = {designation: 'p1', followed: false, tricks: 0, failed: false};
 
-		const main3: PrefScoreMain = { designation: 'p1', tricks: 6, failed: false };
-		const right3: PrefScoreFollower = { designation: 'p2', followed: true, tricks: 2, failed: false };
-		const left3: PrefScoreFollower = { designation: 'p3', followed: true, tricks: 2, failed: false };
+		const main3: PrefScoreMain = {designation: 'p1', tricks: 6, failed: false};
+		const right3: PrefScoreFollower = {designation: 'p2', followed: true, tricks: 2, failed: false};
+		const left3: PrefScoreFollower = {designation: 'p3', followed: true, tricks: 2, failed: false};
 
 		score3.addPlayedHand(10, main, left, right);
 		score3.addPlayedHand(10, main2, left2, right2);

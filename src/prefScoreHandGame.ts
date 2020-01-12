@@ -2,6 +2,7 @@
 'use strict';
 
 import PrefScoreHand from './prefScoreHand';
+import {PrefScoreFollower, PrefScoreMain} from "./prefScore.types";
 
 const _validTricks = (main: PrefScoreMain, left: PrefScoreFollower, right: PrefScoreFollower): boolean => {
 	if (main.failed && main.tricks > 5) return false;
@@ -10,11 +11,6 @@ const _validTricks = (main: PrefScoreMain, left: PrefScoreFollower, right: PrefS
 };
 
 const _validFails = (main: PrefScoreMain, left: PrefScoreFollower, right: PrefScoreFollower): boolean => !(main.failed && (left.failed || right.failed));
-
-type PrefDesignation = 'p1' | 'p2' | 'p3';
-
-export type PrefScoreMain = { designation: PrefDesignation, tricks: number, failed: boolean };
-export type PrefScoreFollower = { designation: PrefDesignation, followed: boolean, tricks: number, failed: boolean };
 
 export default class PrefScoreHandGame extends PrefScoreHand {
 	private readonly _value: number;
