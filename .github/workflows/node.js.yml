@@ -23,13 +23,10 @@ jobs:
     - uses: borales/actions-yarn@v2.0.0
       with:
         cmd: install # will run `yarn install` command
-    - run: tsc
     - uses: borales/actions-yarn@v2.0.0
       with:
         cmd: clean # will run `yarn clean` command
-    - uses: borales/actions-yarn@v2.0.0
-      with:
-        cmd: build # will run `yarn build` command
+    - run: tsc
     - uses: borales/actions-yarn@v2.0.0
       with:
         cmd: test # will run `yarn test` command
