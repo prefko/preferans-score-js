@@ -19,5 +19,4 @@ export default class PrefScoreHandRefa extends PrefScoreHand {
 	get repealed() {
 		return false;
 	}
-
 }

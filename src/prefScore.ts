@@ -6,7 +6,7 @@ import PrefPaper from 'preferans-paper-js';
 import PrefScoreHand from './prefScoreHand';
 import PrefScoreHandGame from './prefScoreHandGame';
 import PrefScoreHandRefa from './prefScoreHandRefa';
-import {PrefDesignation, PrefScoreMain, PrefScoreFollower} from "./prefScore.types";
+import {PrefDesignation, PrefScoreMain, PrefScoreFollower} from './prefScore.types';
 
 export {PrefScoreMain, PrefScoreFollower};
 
@@ -58,7 +58,12 @@ export default class PrefScore {
 		return this._processHand(hand);
 	}
 
-	public addPlayedHand(value: number, main: PrefScoreMain, left: PrefScoreFollower, right: PrefScoreFollower): PrefScore {
+	public addPlayedHand(
+		value: number,
+		main: PrefScoreMain,
+		left: PrefScoreFollower,
+		right: PrefScoreFollower
+	): PrefScore {
 		const hand = new PrefScoreHandGame(value, main, left, right);
 		const index = size(this._hands) + 1;
 		hand.index = index;
@@ -122,7 +127,7 @@ export default class PrefScore {
 		return {
 			p1: {score: this._p1score, paper: this._p1.mini},
 			p2: {score: this._p2score, paper: this._p2.mini},
-			p3: {score: this._p3score, paper: this._p3.mini},
+			p3: {score: this._p3score, paper: this._p3.mini}
 		};
 	}
 
@@ -130,7 +135,7 @@ export default class PrefScore {
 		return {
 			p1: {score: this._p1score, paper: this._p1.json},
 			p2: {score: this._p2score, paper: this._p2.json},
-			p3: {score: this._p3score, paper: this._p3.json},
+			p3: {score: this._p3score, paper: this._p3.json}
 		};
 	}
 
@@ -175,21 +180,24 @@ export default class PrefScore {
 
 		if (playHand.repealed) {
 			mainPaper.processAsMainRepealed(value, main.designation, main.failed);
-			if (left.followed) leftPaper.processAsFollowerRepealed(value, left.designation, left.tricks, left.failed, main.designation);
-			if (right.followed) rightPaper.processAsFollowerRepealed(value, right.designation, right.tricks, right.failed, main.designation);
-
+			if (left.followed)
+				leftPaper.processAsFollowerRepealed(value, left.designation, left.tricks, left.failed, main.designation);
+			if (right.followed)
+				rightPaper.processAsFollowerRepealed(value, right.designation, right.tricks, right.failed, main.designation);
 		} else {
 			mainPaper.processAsMain(value, main.designation, main.failed);
-			if (left.followed) leftPaper.processAsFollower(value, left.designation, left.tricks, left.failed, main.designation);
-			if (right.followed) rightPaper.processAsFollower(value, right.designation, right.tricks, right.failed, main.designation);
+			if (left.followed)
+				leftPaper.processAsFollower(value, left.designation, left.tricks, left.failed, main.designation);
+			if (right.followed)
+				rightPaper.processAsFollower(value, right.designation, right.tricks, right.failed, main.designation);
 
 			let mainScore: number = this._getScoreByDesignation(main.designation);
 			let leftScore: number = this._getScoreByDesignation(left.designation);
 			let rightScore: number = this._getScoreByDesignation(right.designation);
 
-			mainScore = mainPaper.left + mainPaper.right - (mainPaper.middle * 10) - leftPaper.right - rightPaper.left;
-			leftScore = leftPaper.left + leftPaper.right - (leftPaper.middle * 10) - rightPaper.right - mainPaper.left;
-			rightScore = rightPaper.left + rightPaper.right - (rightPaper.middle * 10) - mainPaper.right - leftPaper.left;
+			mainScore = mainPaper.left + mainPaper.right - mainPaper.middle * 10 - leftPaper.right - rightPaper.left;
+			leftScore = leftPaper.left + leftPaper.right - leftPaper.middle * 10 - rightPaper.right - mainPaper.left;
+			rightScore = rightPaper.left + rightPaper.right - rightPaper.middle * 10 - mainPaper.right - leftPaper.left;
 
 			this._setScoreByDesignation(main.designation, mainScore);
 			this._setScoreByDesignation(left.designation, leftScore);
@@ -217,5 +225,4 @@ export default class PrefScore {
 		this._p3.addNewRefa();
 		return this;
 	}
-
 }
