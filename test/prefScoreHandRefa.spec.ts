@@ -1,11 +1,9 @@
-#!/usr/bin/env node
 'use strict';
 
 import {expect} from 'chai';
 import PrefScoreHandRefa from '../src/prefScoreHandRefa';
 
 describe('PrefScoreHandRefa tests', () => {
-
 	describe('PrefScoreHandRefa classes constructors tests', () => {
 		it('constructors should work', () => {
 			expect(() => new PrefScoreHandRefa()).to.not.throw();
@@ -20,7 +18,7 @@ describe('PrefScoreHandRefa tests', () => {
 			expect(new PrefScoreHandRefa().index).to.equal(0);
 			expect(() => new PrefScoreHandRefa().repealed).to.not.throw();
 			expect(new PrefScoreHandRefa().repealed).to.equal(false);
-			expect(() => hand.repealed = true).to.throw();
+			expect(() => (hand.repealed = true)).to.throw();
 			expect(() => hand.repealed).to.not.throw();
 			expect(hand.repealed).to.equal(false);
 			expect(hand.index).to.equal(1);
@@ -28,5 +26,4 @@ describe('PrefScoreHandRefa tests', () => {
 			expect(hand.game).to.equal(false);
 		});
 	});
-
 });

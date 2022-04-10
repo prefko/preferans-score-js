@@ -1,4 +1,3 @@
-#!/usr/bin/env node
 'use strict';
 
 import PrefScoreHand from './prefScoreHand';
@@ -10,8 +9,7 @@ const _validTricks = (main: PrefScoreMain, left: PrefScoreFollower, right: PrefS
 	return main.failed ? tricks === 5 : tricks < 5;
 };
 
-const _validFails = (main: PrefScoreMain, left: PrefScoreFollower, right: PrefScoreFollower): boolean =>
-	!(main.failed && (left.failed || right.failed));
+const _validFails = (main: PrefScoreMain, left: PrefScoreFollower, right: PrefScoreFollower): boolean => !(main.failed && (left.failed || right.failed));
 
 export default class PrefScoreHandGame extends PrefScoreHand {
 	private readonly _value: number;
@@ -21,29 +19,11 @@ export default class PrefScoreHandGame extends PrefScoreHand {
 
 	constructor(value: number, main: PrefScoreMain, left: PrefScoreFollower, right: PrefScoreFollower) {
 		if (!_validTricks(main, left, right)) {
-			throw new Error(
-				'PrefScoreHandGame::constructor:Invalid tricks! ' +
-					'[main:' +
-					main.tricks +
-					', left:' +
-					left.tricks +
-					', right:' +
-					right.tricks +
-					']'
-			);
+			throw new Error('PrefScoreHandGame::constructor:Invalid tricks! ' + '[main:' + main.tricks + ', left:' + left.tricks + ', right:' + right.tricks + ']');
 		}
 
 		if (!_validFails(main, left, right)) {
-			throw new Error(
-				'PrefScoreHandGame::constructor:Invalid fails! ' +
-					'[main.failed:' +
-					main.failed +
-					', left.failed:' +
-					left.failed +
-					', right.failed:' +
-					right.failed +
-					']'
-			);
+			throw new Error('PrefScoreHandGame::constructor:Invalid fails! ' + '[main.failed:' + main.failed + ', left.failed:' + left.failed + ', right.failed:' + right.failed + ']');
 		}
 
 		super();

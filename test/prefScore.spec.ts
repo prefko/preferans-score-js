@@ -1,14 +1,12 @@
-#!/usr/bin/env node
 'use strict';
 
 import {expect} from 'chai';
 import PrefScore from '../src/prefScore';
-import {PrefScoreFollower, PrefScoreMain} from "../src/prefScore.types";
+import {PrefScoreFollower, PrefScoreMain} from '../src/prefScore.types';
 
 describe('PrefScore tests', () => {
-
 	describe('PrefScore classes constructors tests', () => {
-		const rand = Math.ceil((Math.random() * 1000)) * 2;
+		const rand = Math.ceil(Math.random() * 1000) * 2;
 		it('constructors should work', () => {
 			expect(() => new PrefScore('cope', 'milja', 'mitko', rand + 1)).to.throw();
 			expect(() => new PrefScore('cope', 'milja', 'mitko', rand)).to.not.throw();
@@ -20,16 +18,16 @@ describe('PrefScore tests', () => {
 		const json = {
 			p1: {
 				score: -600,
-				paper: {designation: 'p1', left: [], middle: [60], right: []},
+				paper: {designation: 'p1', left: [], middle: [60], right: []}
 			},
 			p2: {
 				score: -600,
-				paper: {designation: 'p2', left: [], middle: [60], right: []},
+				paper: {designation: 'p2', left: [], middle: [60], right: []}
 			},
 			p3: {
 				score: -600,
-				paper: {designation: 'p3', left: [], middle: [60], right: []},
-			},
+				paper: {designation: 'p3', left: [], middle: [60], right: []}
+			}
 		};
 		const score = new PrefScore('cope', 'milja', 'mitko', 60, 0);
 		it('PrefScore methods should work properly 1', () => {
@@ -51,8 +49,8 @@ describe('PrefScore tests', () => {
 					designation: 'p1',
 					left: [],
 					middle: [60, {left: 0, middle: 0, right: 0}],
-					right: [],
-				},
+					right: []
+				}
 			},
 			p2: {
 				score: -600,
@@ -60,8 +58,8 @@ describe('PrefScore tests', () => {
 					designation: 'p2',
 					left: [],
 					middle: [60, {left: 0, middle: 0, right: 0}],
-					right: [],
-				},
+					right: []
+				}
 			},
 			p3: {
 				score: -600,
@@ -69,9 +67,9 @@ describe('PrefScore tests', () => {
 					designation: 'p3',
 					left: [],
 					middle: [60, {left: 0, middle: 0, right: 0}],
-					right: [],
-				},
-			},
+					right: []
+				}
+			}
 		};
 		const score2 = new PrefScore('cope', 'milja', 'mitko', 60);
 		score2.addRefaHand();
@@ -89,23 +87,21 @@ describe('PrefScore tests', () => {
 				paper: {
 					designation: 'p1',
 					left: [],
-					middle: [
-						60,
-						{left: 0, middle: 0, right: 0},
-						{value: 50, repealed: true},
-						{value: 40, repealed: true},
-					],
-					right: [],
-				},
+					middle: [60, {left: 0, middle: 0, right: 0}, {value: 50, repealed: true}, {value: 40, repealed: true}],
+					right: []
+				}
 			},
 			p2: {
 				score: -500,
 				paper: {
 					designation: 'p2',
-					left: [{value: 20, repealed: true}, {value: 40, repealed: true}],
+					left: [
+						{value: 20, repealed: true},
+						{value: 40, repealed: true}
+					],
 					middle: [60, {left: 0, middle: 1, right: 0}, {value: 50, repealed: true}, 50],
-					right: [],
-				},
+					right: []
+				}
 			},
 			p3: {
 				score: -600,
@@ -113,23 +109,26 @@ describe('PrefScore tests', () => {
 					designation: 'p3',
 					left: [],
 					middle: [60, {left: 0, middle: 0, right: 0}],
-					right: [{value: 20, repealed: true}, {value: 40, repealed: true}],
-				},
-			},
+					right: [
+						{value: 20, repealed: true},
+						{value: 40, repealed: true}
+					]
+				}
+			}
 		};
 		const mini3 = {
 			p1: {
 				score: -600,
-				paper: {designation: 'p1', left: 0, middle: 60, right: 0},
+				paper: {designation: 'p1', left: 0, middle: 60, right: 0}
 			},
 			p2: {
 				score: -500,
-				paper: {designation: 'p2', left: 0, middle: 50, right: 0},
+				paper: {designation: 'p2', left: 0, middle: 50, right: 0}
 			},
 			p3: {
 				score: -600,
-				paper: {designation: 'p3', left: 0, middle: 60, right: 0},
-			},
+				paper: {designation: 'p3', left: 0, middle: 60, right: 0}
+			}
 		};
 		const score3 = new PrefScore('cope', 'milja', 'mitko', 60, 1);
 		score3.addRefaHand();
@@ -180,5 +179,4 @@ describe('PrefScore tests', () => {
 			expect(() => score5.addRefaHand()).to.not.throw;
 		});
 	});
-
 });

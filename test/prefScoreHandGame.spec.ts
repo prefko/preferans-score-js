@@ -1,12 +1,10 @@
-#!/usr/bin/env node
 'use strict';
 
 import {expect} from 'chai';
 import PrefScoreHandGame from '../src/prefScoreHandGame';
-import {PrefScoreFollower, PrefScoreMain} from "../src/prefScore.types";
+import {PrefScoreFollower, PrefScoreMain} from '../src/prefScore.types';
 
 describe('PrefScoreHandGame tests', () => {
-
 	describe('PrefScoreHandGame classes constructors tests', () => {
 		const main: PrefScoreMain = {designation: 'p1', tricks: 6, failed: false};
 		const left: PrefScoreFollower = {designation: 'p2', tricks: 2, failed: false, followed: true};
@@ -66,5 +64,4 @@ describe('PrefScoreHandGame tests', () => {
 			expect(game.right).to.deep.equal(right);
 		});
 	});
-
 });

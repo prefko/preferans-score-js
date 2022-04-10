@@ -1,4 +1,3 @@
-#!/usr/bin/env node
 'use strict';
 
 export type PrefDesignation = 'p1' | 'p2' | 'p3';

@@ -1,4 +1,3 @@
-#!/usr/bin/env node
 'use strict';
 
 import {size} from 'lodash';
@@ -58,12 +57,7 @@ export default class PrefScore {
 		return this._processHand(hand);
 	}
 
-	public addPlayedHand(
-		value: number,
-		main: PrefScoreMain,
-		left: PrefScoreFollower,
-		right: PrefScoreFollower
-	): PrefScore {
+	public addPlayedHand(value: number, main: PrefScoreMain, left: PrefScoreFollower, right: PrefScoreFollower): PrefScore {
 		const hand = new PrefScoreHandGame(value, main, left, right);
 		const index = size(this._hands) + 1;
 		hand.index = index;
@@ -180,16 +174,12 @@ export default class PrefScore {
 
 		if (playHand.repealed) {
 			mainPaper.processAsMainRepealed(value, main.designation, main.failed);
-			if (left.followed)
-				leftPaper.processAsFollowerRepealed(value, left.designation, left.tricks, left.failed, main.designation);
-			if (right.followed)
-				rightPaper.processAsFollowerRepealed(value, right.designation, right.tricks, right.failed, main.designation);
+			if (left.followed) leftPaper.processAsFollowerRepealed(value, left.designation, left.tricks, left.failed, main.designation);
+			if (right.followed) rightPaper.processAsFollowerRepealed(value, right.designation, right.tricks, right.failed, main.designation);
 		} else {
 			mainPaper.processAsMain(value, main.designation, main.failed);
-			if (left.followed)
-				leftPaper.processAsFollower(value, left.designation, left.tricks, left.failed, main.designation);
-			if (right.followed)
-				rightPaper.processAsFollower(value, right.designation, right.tricks, right.failed, main.designation);
+			if (left.followed) leftPaper.processAsFollower(value, left.designation, left.tricks, left.failed, main.designation);
+			if (right.followed) rightPaper.processAsFollower(value, right.designation, right.tricks, right.failed, main.designation);
 
 			let mainScore: number = this._getScoreByDesignation(main.designation);
 			let leftScore: number = this._getScoreByDesignation(left.designation);
