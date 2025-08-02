@@ -1,7 +1,7 @@
 'use strict';
 
-import PrefScore from '../src/prefScore';
-import {PrefScoreFollower, PrefScoreMain} from '../src/prefScore.types';
+import PrefScore from '../src/pref.score';
+import {PrefScoreFollower, PrefScoreMain} from '../src/pref.score.types';
 
 describe('PrefScore tests', () => {
 	describe('PrefScore classes constructors tests', () => {
