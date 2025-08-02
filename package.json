@@ -46,7 +46,7 @@
 	"dependencies": {
 		"@types/lodash": "^4.14.181",
 		"lodash": "^4.17.15",
-		"preferans-paper-js": "3.1.4"
+		"preferans-paper-js": "3.1.5"
 	},
 	"devDependencies": {
 		"@eslint/js": "^9.32.0",
