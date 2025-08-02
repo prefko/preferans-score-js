@@ -1,6 +1,5 @@
 'use strict';
 
-import {expect} from 'chai';
 import PrefScoreHandGame from '../src/prefScoreHandGame';
 import {PrefScoreFollower, PrefScoreMain} from '../src/prefScore.types';
 
@@ -10,8 +9,8 @@ describe('PrefScoreHandGame tests', () => {
 		const left: PrefScoreFollower = {designation: 'p2', tricks: 2, failed: false, followed: true};
 		const right: PrefScoreFollower = {designation: 'p3', tricks: 2, failed: false, followed: true};
 		it('constructors should work', () => {
-			expect(() => new PrefScoreHandGame(10, main, left, right)).to.not.throw();
-			expect(new PrefScoreHandGame(10, main, left, right)).to.be.an('object');
+			expect(() => new PrefScoreHandGame(10, main, left, right)).not.toThrow();
+			expect(new PrefScoreHandGame(10, main, left, right)).toBeInstanceOf(Object);
 		});
 	});
 
@@ -23,12 +22,12 @@ describe('PrefScoreHandGame tests', () => {
 		hand.index = 1;
 		hand.repealed = true;
 		it('PrefScoreHandGame methods should work properly', () => {
-			expect(new PrefScoreHandGame(10, main, left, right).index).to.equal(0);
-			expect(new PrefScoreHandGame(10, main, left, right).repealed).to.equal(false);
-			expect(hand.index).to.equal(1);
-			expect(hand.repealed).to.equal(true);
-			expect(hand.refa).to.equal(false);
-			expect(hand.game).to.equal(true);
+			expect(new PrefScoreHandGame(10, main, left, right).index).toBe(0);
+			expect(new PrefScoreHandGame(10, main, left, right).repealed).toBe(false);
+			expect(hand.index).toBe(1);
+			expect(hand.repealed).toBe(true);
+			expect(hand.refa).toBe(false);
+			expect(hand.game).toBe(true);
 		});
 	});
 
@@ -50,18 +49,18 @@ describe('PrefScoreHandGame tests', () => {
 
 		const game = new PrefScoreHandGame(10, main, left, right);
 		it('PrefScoreHandGame methods should work properly', () => {
-			expect(() => new PrefScoreHandGame(10, mainWrong, left, right)).to.throw();
-			expect(() => new PrefScoreHandGame(10, mainFailed2, left, right)).to.throw();
-			expect(() => new PrefScoreHandGame(10, mainFailed, leftWrong, right)).to.throw();
-			expect(() => new PrefScoreHandGame(10, mainFailed, left, rightWrong)).to.throw();
-			expect(() => new PrefScoreHandGame(10, mainFailed, leftWrong, rightWrong)).to.throw();
-			expect(() => new PrefScoreHandGame(10, mainFailed, leftFailed, right)).to.throw();
-			expect(() => new PrefScoreHandGame(10, mainFailed, left, rightFailed)).to.throw();
-			expect(() => new PrefScoreHandGame(10, main, leftFailed2, rightFailed2)).to.not.throw();
-			expect(game.value).to.equal(10);
-			expect(game.main).to.deep.equal(main);
-			expect(game.left).to.deep.equal(left);
-			expect(game.right).to.deep.equal(right);
+			expect(() => new PrefScoreHandGame(10, mainWrong, left, right)).toThrow();
+			expect(() => new PrefScoreHandGame(10, mainFailed2, left, right)).toThrow();
+			expect(() => new PrefScoreHandGame(10, mainFailed, leftWrong, right)).toThrow();
+			expect(() => new PrefScoreHandGame(10, mainFailed, left, rightWrong)).toThrow();
+			expect(() => new PrefScoreHandGame(10, mainFailed, leftWrong, rightWrong)).toThrow();
+			expect(() => new PrefScoreHandGame(10, mainFailed, leftFailed, right)).toThrow();
+			expect(() => new PrefScoreHandGame(10, mainFailed, left, rightFailed)).toThrow();
+			expect(() => new PrefScoreHandGame(10, main, leftFailed2, rightFailed2)).not.toThrow();
+			expect(game.value).toBe(10);
+			expect(game.main).toEqual(main);
+			expect(game.left).toEqual(left);
+			expect(game.right).toEqual(right);
 		});
 	});
 });

@@ -1,6 +1,5 @@
 'use strict';
 
-import {expect} from 'chai';
 import PrefScore from '../src/prefScore';
 import {PrefScoreFollower, PrefScoreMain} from '../src/prefScore.types';
 
@@ -8,9 +7,9 @@ describe('PrefScore tests', () => {
 	describe('PrefScore classes constructors tests', () => {
 		const rand = Math.ceil(Math.random() * 1000) * 2;
 		it('constructors should work', () => {
-			expect(() => new PrefScore('cope', 'milja', 'mitko', rand + 1)).to.throw();
-			expect(() => new PrefScore('cope', 'milja', 'mitko', rand)).to.not.throw();
-			expect(new PrefScore('cope', 'milja', 'mitko', rand)).to.be.an('object');
+			expect(() => new PrefScore('cope', 'milja', 'mitko', rand + 1)).toThrow();
+			expect(() => new PrefScore('cope', 'milja', 'mitko', rand)).not.toThrow();
+			expect(new PrefScore('cope', 'milja', 'mitko', rand)).toBeInstanceOf(Object);
 		});
 	});
 
@@ -31,15 +30,15 @@ describe('PrefScore tests', () => {
 		};
 		const score = new PrefScore('cope', 'milja', 'mitko', 60, 0);
 		it('PrefScore methods should work properly 1', () => {
-			expect(() => score.addRefaHand()).to.throw;
-			expect(score.handCount).to.equal(0);
-			expect(score.json).to.deep.equal(json);
-			expect(score.hasUnplayedRefa('p1')).to.equal(false);
-			expect(score.hasUnplayedRefa('p2')).to.equal(false);
-			expect(score.hasUnplayedRefa('p3')).to.equal(false);
-			expect(score.username1).to.equal('cope');
-			expect(score.username2).to.equal('milja');
-			expect(score.username3).to.equal('mitko');
+			expect(() => score.addRefaHand()).toThrow();
+			expect(score.handCount).toBe(0);
+			expect(score.json).toEqual(json);
+			expect(score.hasUnplayedRefa('p1')).toBe(false);
+			expect(score.hasUnplayedRefa('p2')).toBe(false);
+			expect(score.hasUnplayedRefa('p3')).toBe(false);
+			expect(score.username1).toBe('cope');
+			expect(score.username2).toBe('milja');
+			expect(score.username3).toBe('mitko');
 		});
 
 		const json2 = {
@@ -74,11 +73,11 @@ describe('PrefScore tests', () => {
 		const score2 = new PrefScore('cope', 'milja', 'mitko', 60);
 		score2.addRefaHand();
 		it('PrefScore methods should work properly 2', () => {
-			expect(score2.handCount).to.equal(1);
-			expect(score2.json).to.deep.equal(json2);
-			expect(score2.hasUnplayedRefa('p1')).to.equal(true);
-			expect(score2.hasUnplayedRefa('p2')).to.equal(true);
-			expect(score2.hasUnplayedRefa('p3')).to.equal(true);
+			expect(score2.handCount).toBe(1);
+			expect(score2.json).toEqual(json2);
+			expect(score2.hasUnplayedRefa('p1')).toBe(true);
+			expect(score2.hasUnplayedRefa('p2')).toBe(true);
+			expect(score2.hasUnplayedRefa('p3')).toBe(true);
 		});
 
 		const json3 = {
@@ -152,12 +151,12 @@ describe('PrefScore tests', () => {
 		score3.repealHand(3);
 		score3.repealHand(4);
 		it('PrefScore methods should work properly 3', () => {
-			expect(() => score3.repealHand(0)).to.throw();
-			expect(() => score3.repealHand(17)).to.throw();
-			expect(score3.handCount).to.equal(2);
-			expect(score3.mini).to.deep.equal(mini3);
-			expect(score3.json).to.deep.equal(json3);
-			expect(() => score3.addRefaHand()).to.throw();
+			expect(() => score3.repealHand(0)).toThrow();
+			expect(() => score3.repealHand(17)).toThrow();
+			expect(score3.handCount).toBe(2);
+			expect(score3.mini).toEqual(mini3);
+			expect(score3.json).toEqual(json3);
+			expect(() => score3.addRefaHand()).toThrow();
 		});
 
 		const score4 = new PrefScore('cope', 'milja', 'mitko', 60, 1);
@@ -165,18 +164,18 @@ describe('PrefScore tests', () => {
 		score4.username2 = 'milja2';
 		score4.username3 = 'mitko2';
 		it('PrefScore setName methos should work properly', () => {
-			expect(() => score4.addRefaHand()).to.not.throw;
-			expect(score4.hasUnplayedRefa('p1')).to.equal(false);
-			expect(score4.hasUnplayedRefa('p2')).to.equal(false);
-			expect(score4.hasUnplayedRefa('p3')).to.equal(false);
-			expect(score4.username1).to.equal('cope2');
-			expect(score4.username2).to.equal('milja2');
-			expect(score4.username3).to.equal('mitko2');
+			expect(() => score4.addRefaHand()).not.toThrow();
+			expect(score4.hasUnplayedRefa('p1')).toBe(false);
+			expect(score4.hasUnplayedRefa('p2')).toBe(false);
+			expect(score4.hasUnplayedRefa('p3')).toBe(false);
+			expect(score4.username1).toBe('cope2');
+			expect(score4.username2).toBe('milja2');
+			expect(score4.username3).toBe('mitko2');
 		});
 
 		const score5 = new PrefScore('cope', 'milja', 'mitko', 60, Infinity);
 		it('PrefScore setName methos should work properly', () => {
-			expect(() => score5.addRefaHand()).to.not.throw;
+			expect(() => score5.addRefaHand()).not.toThrow();
 		});
 	});
 });
