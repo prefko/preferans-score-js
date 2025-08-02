@@ -2,10 +2,10 @@
 
 import {size} from 'lodash';
 import PrefPaper from 'preferans-paper-js';
-import PrefScoreHand from './prefScoreHand';
-import PrefScoreHandGame from './prefScoreHandGame';
-import PrefScoreHandRefa from './prefScoreHandRefa';
-import {PrefDesignation, PrefScoreMain, PrefScoreFollower} from './prefScore.types';
+import PrefScoreHand from './pref.score.hand';
+import PrefScoreHandGame from './pref.score.hand.game';
+import PrefScoreHandRefa from './pref.score.hand.refa';
+import {PrefDesignation, PrefScoreMain, PrefScoreFollower} from './pref.score.types';
 
 export {PrefScoreMain, PrefScoreFollower};
 

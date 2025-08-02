@@ -1,6 +1,6 @@
 'use strict';
 
-import PrefScoreHandRefa from '../src/prefScoreHandRefa';
+import PrefScoreHandRefa from '../src/pref.score.hand.refa';
 
 describe('PrefScoreHandRefa tests', () => {
 	describe('PrefScoreHandRefa classes constructors tests', () => {

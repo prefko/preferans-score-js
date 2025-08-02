@@ -1,7 +1,7 @@
 'use strict';
 
-import PrefScoreHand from './prefScoreHand';
-import {PrefScoreFollower, PrefScoreMain} from './prefScore.types';
+import PrefScoreHand from './pref.score.hand';
+import {PrefScoreFollower, PrefScoreMain} from './pref.score.types';
 
 const _validTricks = (main: PrefScoreMain, left: PrefScoreFollower, right: PrefScoreFollower): boolean => {
 	if (main.failed && main.tricks > 5) return false;

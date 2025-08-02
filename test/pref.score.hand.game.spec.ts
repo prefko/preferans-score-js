@@ -1,7 +1,7 @@
 'use strict';
 
-import PrefScoreHandGame from '../src/prefScoreHandGame';
-import {PrefScoreFollower, PrefScoreMain} from '../src/prefScore.types';
+import PrefScoreHandGame from '../src/pref.score.hand.game';
+import {PrefScoreFollower, PrefScoreMain} from '../src/pref.score.types';
 
 describe('PrefScoreHandGame tests', () => {
 	describe('PrefScoreHandGame classes constructors tests', () => {

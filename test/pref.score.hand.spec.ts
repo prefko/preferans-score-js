@@ -1,6 +1,6 @@
 'use strict';
 
-describe('prefScoreHand tests', () => {
+describe('pref.score.hand tests', () => {
 	// TODO: implement tests
 	it.todo('should be implemented');
 });

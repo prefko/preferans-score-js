@@ -1,6 +1,6 @@
 'use strict';
 
-import PrefScoreHand from './prefScoreHand';
+import PrefScoreHand from './pref.score.hand';
 
 export default class PrefScoreHandRefa extends PrefScoreHand {
 	constructor() {
